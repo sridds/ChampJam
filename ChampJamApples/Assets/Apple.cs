@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Apple : MonoBehaviour
@@ -18,7 +19,10 @@ public class Apple : MonoBehaviour
     [SerializeField] float maxArrowLength;
     [SerializeField] float minArrowLength;
 
-    enum ShakeDirections
+    public Action<ShakeDirections> Shake;
+    public Action Deattach;
+
+    public enum ShakeDirections
     {
         NONE,
         LEFT,
@@ -57,6 +61,7 @@ public class Apple : MonoBehaviour
             Debug.Log("Drop");
             //Drop Apple Effects
             isAttached = false;
+            Deattach?.Invoke();
         }
 
         if (!isAttached)
@@ -100,16 +105,21 @@ public class Apple : MonoBehaviour
 
     void WormShake()
     {
-        if (Input.GetAxisRaw("Horizontal") > 0 && lastShakeDirection != ShakeDirections.RIGHT)
+        if (isAttached)
         {
-            lastShakeDirection = ShakeDirections.RIGHT;
-            health--;
-        }
+            if (Input.GetAxisRaw("Horizontal") > 0 && lastShakeDirection != ShakeDirections.RIGHT)
+            {
+                lastShakeDirection = ShakeDirections.RIGHT;
+                Shake?.Invoke(lastShakeDirection);
+                health--;
+            }
 
-        if (Input.GetAxisRaw("Horizontal") < 0 && lastShakeDirection != ShakeDirections.LEFT)
-        {
-            lastShakeDirection = ShakeDirections.LEFT;
-            health--;
+            if (Input.GetAxisRaw("Horizontal") < 0 && lastShakeDirection != ShakeDirections.LEFT)
+            {
+                lastShakeDirection = ShakeDirections.LEFT;
+                Shake?.Invoke(lastShakeDirection);
+                health--;
+            }
         }
     }
 
