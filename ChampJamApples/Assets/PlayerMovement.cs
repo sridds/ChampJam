@@ -121,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
             if (collision.gameObject.TryGetComponent(out Apple appleScript))
             {
                 //No double dipping
-                if (previousApple == appleScript)
+                if (previousApple != null)
                 {
                     return;
                 }
