@@ -56,30 +56,52 @@ public class VisionCircle : MonoBehaviour
         float normDistanceClamped = (distanceClamped - _maxOpacityRadius) / (_minOpacityRadius - _maxOpacityRadius);
         float t = Mathf.Lerp(1.0f, 0.0f, normDistanceClamped);
 
-        if (GameManager.instance.playerRef.isActiveAndEnabled)
+        if (!isFlickering && cooldownTimer > damageCooldown)
         {
-            _visionOutline.color = new Color(255, 0, 0, t);
-            flag = false;
+            if (GameManager.instance.playerRef.isActiveAndEnabled)
+            {
+                _visionOutline.color = new Color(255, 0, 0, t);
+                flag = false;
+            }
+            else if (!flag)
+            {
+                _visionOutline.DOKill(false);
+                _visionOutline.DOFade(0.0f, 0.3f);
+                flag = true;
+            }
         }
-        else if (!flag)
-        {
-            _visionOutline.DOKill(false);
-            _visionOutline.DOFade(0.0f, 0.3f);
-            flag = true;
-        }
+
 
         //Damage Player
         cooldownTimer += Time.deltaTime;
+
         if (cooldownTimer > damageCooldown)
         {
             if (Physics2D.OverlapCircle(transform.position, transform.localScale.x / 2, playerLayer))
             {
+                StartCoroutine(Flicker());
                 GameManager.instance.TakeDamage();
                 cooldownTimer = 0;
             }
         }
 
 
+    }
+
+    private bool isFlickering;
+    private IEnumerator Flicker()
+    {
+        isFlickering = true;
+        for (int i = 0; i < _flickerCount; i++)
+        {
+            _visionOutline.color = Color.white;
+            AudioManager.instance.PlaySound(_flickerClip, 1.0f, 0.7f);
+            yield return new WaitForSeconds(_flickerInterval);
+            _visionOutline.color = Color.clear;
+            yield return new WaitForSeconds(_flickerInterval);
+        }
+        yield return null;
+        isFlickering = false;
     }
 
     private void OnDrawGizmosSelected()
