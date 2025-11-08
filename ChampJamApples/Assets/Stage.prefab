@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 1059054841194162254}
   - component: {fileID: 1318269344166787035}
   - component: {fileID: 8347169644116842492}
+  - component: {fileID: 8359588011804674922}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -226,6 +227,21 @@ MonoBehaviour:
   - {fileID: 249791121, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   - {fileID: -1949534996, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   _interval: 0.5
+--- !u!114 &8359588011804674922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025269218122627659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517fa21d1a466654c9a71fc33bf9dc42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1059054841194162254}
+  _circleAmplitude: {x: 0.1, y: 0.1}
+  _circleFrequency: {x: 2, y: 1}
 --- !u!1 &2572050734888254754
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +317,7 @@ GameObject:
   - component: {fileID: 6875292008293433615}
   - component: {fileID: 4873623630235672329}
   - component: {fileID: 5895680592017959055}
+  - component: {fileID: 4665861680981482259}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -397,6 +414,21 @@ MonoBehaviour:
   - {fileID: 249791121, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   - {fileID: -1949534996, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   _interval: 0.5
+--- !u!114 &4665861680981482259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2953901663122898087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517fa21d1a466654c9a71fc33bf9dc42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 6875292008293433615}
+  _circleAmplitude: {x: 0.1, y: 0.1}
+  _circleFrequency: {x: 2, y: 1}
 --- !u!1 &3087005466233060264
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +440,7 @@ GameObject:
   - component: {fileID: 2692258615454471876}
   - component: {fileID: 4763370495770515498}
   - component: {fileID: 4535932028960632585}
+  - component: {fileID: 8104232712092948454}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -504,6 +537,21 @@ MonoBehaviour:
   - {fileID: 249791121, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   - {fileID: -1949534996, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   _interval: 0.5
+--- !u!114 &8104232712092948454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3087005466233060264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517fa21d1a466654c9a71fc33bf9dc42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 2692258615454471876}
+  _circleAmplitude: {x: 0.1, y: 0.1}
+  _circleFrequency: {x: 2, y: 1}
 --- !u!1 &3339271194864908524
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +563,7 @@ GameObject:
   - component: {fileID: 800559234813251591}
   - component: {fileID: 8735435395382992230}
   - component: {fileID: 6816255907167069342}
+  - component: {fileID: 5940246060779670109}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -611,6 +660,21 @@ MonoBehaviour:
   - {fileID: 1422832809, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   - {fileID: 1460892673, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   _interval: 0.5
+--- !u!114 &5940246060779670109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3339271194864908524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517fa21d1a466654c9a71fc33bf9dc42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 800559234813251591}
+  _circleAmplitude: {x: 0.1, y: 0.1}
+  _circleFrequency: {x: 2, y: 1}
 --- !u!1 &4991173982106958966
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1114924112245289688}
-  - component: {fileID: 364237966765046581}
+  - component: {fileID: 4637968445070075966}
   m_Layer: 0
   m_Name: Leaves Background
   m_TagString: Untagged
@@ -731,7 +795,7 @@ Transform:
   - {fileID: 1327139981924126121}
   m_Father: {fileID: 2133320395182550546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &364237966765046581
+--- !u!114 &4637968445070075966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -740,14 +804,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5021660054969827101}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31cea6e43defdb24eb306a42a2e7d8b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 517fa21d1a466654c9a71fc33bf9dc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _target: {fileID: 1327139981924126121}
   _circleAmplitude: {x: 0.1, y: 0.1}
   _circleFrequency: {x: 2, y: 1}
-  _renderer: {fileID: 5898830663884277501}
-  _sprites: []
-  _interval: 0.5
 --- !u!1 &5381234169751392640
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,6 +917,7 @@ GameObject:
   - component: {fileID: 5941546039486382354}
   - component: {fileID: 2876156847567754175}
   - component: {fileID: 7490186113753665256}
+  - component: {fileID: 643795851462271079}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -951,6 +1014,21 @@ MonoBehaviour:
   - {fileID: 1422832809, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   - {fileID: 1460892673, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   _interval: 0.5
+--- !u!114 &643795851462271079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6722400441611702047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517fa21d1a466654c9a71fc33bf9dc42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 5941546039486382354}
+  _circleAmplitude: {x: 0.1, y: 0.1}
+  _circleFrequency: {x: 2, y: 1}
 --- !u!1 &7904467440801492088
 GameObject:
   m_ObjectHideFlags: 0
