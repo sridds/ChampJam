@@ -14981,8 +14981,8 @@ MonoBehaviour:
   fallSpeed: -1
   popForce: 8
   fallGravity: 4
-  timeUntilOld: 5
-  timeUntilRotten: 7
+  timeUntilOld: 8
+  timeUntilRotten: 16
   healParticle: {fileID: 3648479699611935636}
   arrow: {fileID: 6937700465092194827}
   maxArrowLength: 2
@@ -15120,14 +15120,14 @@ MonoBehaviour:
   - {fileID: -1353102401, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   - {fileID: 461285732, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   _fallSpritesOld:
-  - {fileID: 1715375851, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
-  - {fileID: -1176563861, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
-  - {fileID: -852228713, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
-  - {fileID: 68247959, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
-  - {fileID: 1906210503, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
-  - {fileID: -1567826529, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
-  - {fileID: -1924225492, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
-  - {fileID: -1263375005, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: 1063117426, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: 1759253813, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: -1667289099, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: 1329632256, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: 629473474, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: -1892945223, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: 986034438, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: 43405685, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   _fallSpritesRotten:
   - {fileID: 2138451313, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   - {fileID: -690391690, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}

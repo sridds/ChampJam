@@ -241,20 +241,5 @@ public class AppleJuice : MonoBehaviour
     {
         shakeTransform.eulerAngles = Vector3.zero;
         shakeTransform.localPosition = Vector3.zero;
-
-        switch (appleRef.currentAge)
-        {
-            case Apple.Age.FRESH:
-                _renderer.sprite = _fallSprites[0];
-                break;
-
-            case Apple.Age.OLD:
-                _renderer.sprite = _fallSpritesOld[0];
-                break;
-
-            case Apple.Age.ROTTEN:
-                _renderer.sprite = _fallSpritesRotten[0];
-                break;
-        }
     }
 }

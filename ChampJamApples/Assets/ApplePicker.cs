@@ -51,6 +51,6 @@ public class ApplePicker : MonoBehaviour
             GameManager.instance.GetPoints(100);
         }
         AppleManager.instance.RemoveGroundApple(apple);
-        Destroy(apple.gameObject);
+        apple.GetEaten();
     }
 }
