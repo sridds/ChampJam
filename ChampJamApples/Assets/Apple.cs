@@ -63,7 +63,7 @@ public class Apple : MonoBehaviour
         if (doesHaveWorm && transform.position.y <= -6)
         {
             doesHaveWorm = false;
-            wormRef.Bounce(9, transform.position);
+            wormRef.Bounce(transform.position);
         }
 
     }

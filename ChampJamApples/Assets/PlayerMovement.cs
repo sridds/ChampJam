@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float distanceUntilCanEnterApple;
     [SerializeField] float disableGravityVelocityThreshold;
     [SerializeField] float gravity;
+    [SerializeField] float bottomBounceForce;
     [SerializeField] float maxFallSpeed;
 
     Apple previousApple;
@@ -42,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         if (transform.position.y <= -6)
         {
             transform.position = new Vector2(transform.position.x, -6);
-            Bounce(9, transform.position);
+            Bounce(transform.position);
         }
     }
 
@@ -80,12 +81,12 @@ public class PlayerMovement : MonoBehaviour
         OnLaunch?.Invoke();
     }
 
-    public void Bounce(float bounce, Vector2 startPos)
+    public void Bounce(Vector2 startPos)
     {
         gameObject.SetActive(true);
         gameObject.transform.position = startPos;
         myMarkerManager.ClearMarkerList();
-        rb.linearVelocityY = bounce;
+        rb.linearVelocityY = bottomBounceForce;
 
         OnLaunch?.Invoke();
     }
