@@ -6,7 +6,7 @@ public class AppleManager : MonoBehaviour
     public static AppleManager instance;
     [SerializeField] Apple applePrefab;
     [SerializeField] List<AppleSpawn> appleSpawns;
-    [SerializeField] List<Apple> groundedApples;
+    public List<Apple> groundedApples;
     [SerializeField] float startSpawnDelay;
     [SerializeField] float endSpawnDelay;
     [SerializeField] float timeUntilEnd;
