@@ -10177,7 +10177,7 @@ MonoBehaviour:
   rotationInDuration: 0.4
   rotationAmount: 25
   shakeParticle: {fileID: 8384835290294637320}
-  particlePlayChance: 40
+  particlePlayChance: 100
   _enterAppleSound: {fileID: 8300000, guid: d3f2dd0b204807147bf32be15faeccd1, type: 3}
   _exitAppleSound: {fileID: 8300000, guid: 8d7b612d9dc755f468e0cbd7ef05ce36, type: 3}
   _swingAppleSound:
@@ -10188,6 +10188,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a3d14520ee86088488a06ba14c780f97, type: 3}
   - {fileID: 8300000, guid: 55f3e8d3da2384a47996aa8f42e878e1, type: 3}
   _appleKnockedSound: {fileID: 8300000, guid: 1ed356f2659e7e643954dff2abba7869, type: 3}
+  _pitchUpwardModification: 0.05
   enterParticle: {fileID: 5593203258995642389}
   _renderer: {fileID: 6650414545276564829}
   _spriteFlicker: {fileID: 3070462583137694784, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
@@ -10474,7 +10475,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -11030,7 +11031,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0.82, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 4, y: 3, z: 1}
+    m_Scale: {x: 3, y: 2, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -11899,7 +11900,7 @@ ParticleSystem:
     tilesY: 1
     animationType: 0
     rowIndex: 0
-    cycles: 3
+    cycles: 8
     uvChannelMask: -1
     rowMode: 1
     sprites:
@@ -11908,7 +11909,7 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -11965,7 +11966,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 5
       minScalar: 0
       maxCurve:
         serializedVersion: 2

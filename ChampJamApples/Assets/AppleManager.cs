@@ -6,6 +6,7 @@ public class AppleManager : MonoBehaviour
     public static AppleManager instance;
     [SerializeField] Apple applePrefab;
     [SerializeField] List<AppleSpawn> appleSpawns;
+    [SerializeField] List<Apple> groundedApples;
     [SerializeField] float startSpawnDelay;
     [SerializeField] float endSpawnDelay;
     [SerializeField] float timeUntilEnd;
@@ -109,5 +110,16 @@ public class AppleManager : MonoBehaviour
     {
         playtime += Time.deltaTime;
         spawnDelay = Mathf.Lerp(startSpawnDelay, endSpawnDelay, playtime / timeUntilEnd);
+    }
+
+    public void AddGroundApple(Apple groundedApple)
+    {
+        groundedApples.Add(groundedApple);
+    }
+
+    public void RemoveGroundApple(Apple groundedApple)
+    {
+        groundedApples.Remove(groundedApple);
+        groundedApples.TrimExcess();
     }
 }

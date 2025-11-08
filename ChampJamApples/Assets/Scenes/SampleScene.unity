@@ -1470,26 +1470,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 248713814058829578, guid: a859f83ceb3521543bc5c6185c61ce10, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2344228693979073839, guid: a859f83ceb3521543bc5c6185c61ce10, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3786958004478997364, guid: a859f83ceb3521543bc5c6185c61ce10, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4178724806119081226, guid: a859f83ceb3521543bc5c6185c61ce10, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4869317216736309701, guid: a859f83ceb3521543bc5c6185c61ce10, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5569550965336456849, guid: a859f83ceb3521543bc5c6185c61ce10, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1533,26 +1513,6 @@ PrefabInstance:
     - target: {fileID: 5922920670931466797, guid: a859f83ceb3521543bc5c6185c61ce10, type: 3}
       propertyPath: m_Name
       value: First Apple
-      objectReference: {fileID: 0}
-    - target: {fileID: 5922920670931466797, guid: a859f83ceb3521543bc5c6185c61ce10, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6104273206434459839, guid: a859f83ceb3521543bc5c6185c61ce10, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937700465092194827, guid: a859f83ceb3521543bc5c6185c61ce10, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7121922529956638561, guid: a859f83ceb3521543bc5c6185c61ce10, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8920422406141014762, guid: a859f83ceb3521543bc5c6185c61ce10, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1615,6 +1575,10 @@ PrefabInstance:
       propertyPath: playerRef
       value: 
       objectReference: {fileID: 1085525167}
+    - target: {fileID: 8814561584550989929, guid: 02ceb49e24d29244c9c60b738d5da8dd, type: 3}
+      propertyPath: groundheight
+      value: -6.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8814561584550989929, guid: 02ceb49e24d29244c9c60b738d5da8dd, type: 3}
       propertyPath: playerHealth
       value: 3

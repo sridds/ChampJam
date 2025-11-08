@@ -29,6 +29,9 @@ public class Apple : MonoBehaviour
     public Action<Vector2, Vector2> Attach;
     public Action WormLaunched;
     AppleSpawn spawnPoint;
+
+    bool isGrounded;
+
     public enum ShakeDirections
     {
         NONE,
@@ -60,10 +63,20 @@ public class Apple : MonoBehaviour
 
         DropApple();
 
-        if (doesHaveWorm && transform.position.y <= -7)
+        if (doesHaveWorm && transform.position.y <= GameManager.instance.groundheight)
         {
             doesHaveWorm = false;
             wormRef.Bounce(transform.position, true);
+        }
+
+        if (transform.position.y <= GameManager.instance.groundheight)
+        {
+            if (!isGrounded)
+            {
+                isGrounded = true;
+                AppleManager.instance.AddGroundApple(this);
+            }
+            body.bodyType = RigidbodyType2D.Static;
         }
 
     }
@@ -92,7 +105,7 @@ public class Apple : MonoBehaviour
             body.AddForce(new Vector2(0, popForce), ForceMode2D.Impulse);
         }
 
-        if (!isAttached)
+        if (!isAttached && !isGrounded)
         {
             body.gravityScale = fallGravity;
             body.linearVelocityY = Mathf.Clamp(body.linearVelocityY, fallSpeed, Mathf.Infinity);

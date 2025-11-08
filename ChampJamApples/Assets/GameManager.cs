@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public PlayerMovement playerRef;
     public int playerHealth;
-
+    [SerializeField] public float groundheight;
 
     void Awake()
     {

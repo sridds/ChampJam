@@ -40,9 +40,9 @@ public class PlayerMovement : MonoBehaviour
 
         Gravity();
 
-        if (transform.position.y <= -7)
+        if (transform.position.y <= GameManager.instance.groundheight)
         {
-            transform.position = new Vector2(transform.position.x, -7);
+            transform.position = new Vector2(transform.position.x, GameManager.instance.groundheight);
             Bounce(transform.position, false);
         }
 
