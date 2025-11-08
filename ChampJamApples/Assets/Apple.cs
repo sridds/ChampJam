@@ -1,6 +1,7 @@
 using System;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using static AppleManager;
 
 public class Apple : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class Apple : MonoBehaviour
     public Action<ShakeDirections> Shake;
     public Action Deattach;
     public Action<Vector2> Attach;
-
+    AppleSpawn spawnPoint;
     public enum ShakeDirections
     {
         NONE,
@@ -60,6 +61,10 @@ public class Apple : MonoBehaviour
         DropApple();
     }
 
+    public void Spawn(AppleSpawn spawn)
+    {
+        spawnPoint = spawn;
+    }
     void DropApple()
     {
         if (isAttached)
@@ -72,6 +77,10 @@ public class Apple : MonoBehaviour
             Debug.Log("Drop");
             //Drop Apple Effects
             isAttached = false;
+            if (spawnPoint != null)
+            {
+                spawnPoint.currentApple = null;
+            }
             Deattach?.Invoke();
             body.AddForce(new Vector2(0, popForce), ForceMode2D.Impulse);
         }

@@ -10065,9 +10065,9 @@ MonoBehaviour:
   isAttached: 0
   body: {fileID: 359713080144043700}
   maxDragDistance: 3.5
-  launchMultiplier: 5
-  health: 15
-  fallSpeed: -2
+  launchMultiplier: 6
+  health: 6
+  fallSpeed: -1
   popForce: 8
   fallGravity: 4
   arrow: {fileID: 6937700465092194827}
