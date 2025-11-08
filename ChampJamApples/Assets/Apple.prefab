@@ -10071,9 +10071,12 @@ MonoBehaviour:
   fallSpeed: -1
   popForce: 8
   fallGravity: 4
+  timeUntilOld: 2
+  timeUntilRotten: 4
   arrow: {fileID: 6937700465092194827}
   maxArrowLength: 2
   minArrowLength: 0.2
+  currentAge: 0
 --- !u!58 &6173799909827258076
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10205,6 +10208,24 @@ MonoBehaviour:
   - {fileID: -713966375, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   - {fileID: -1353102401, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   - {fileID: 461285732, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  _fallSpritesOld:
+  - {fileID: 2138451313, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: -690391690, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: 609577207, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: 1693118097, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: 1550603257, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: -1679974485, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: 1705795185, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: -28702234, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  _fallSpritesRotten:
+  - {fileID: 2138451313, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: -690391690, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: 609577207, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: 1693118097, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: 1550603257, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: -1679974485, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: 1705795185, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: -28702234, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   _frameInterval: 0.08
   _wormInside: {fileID: 4967112018323707176}
   _wormPokeAnimation:

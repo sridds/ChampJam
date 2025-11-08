@@ -17,7 +17,9 @@ public class Apple : MonoBehaviour
     [SerializeField] float fallSpeed;
     [SerializeField] float popForce;
     [SerializeField] float fallGravity;
-
+    [SerializeField] float timeUntilOld;
+    [SerializeField] float timeUntilRotten;
+    float oldTimer = 0;
 
     [Header("Arrow")]
     [SerializeField] GameObject arrow;
@@ -29,6 +31,14 @@ public class Apple : MonoBehaviour
     public Action<Vector2, Vector2> Attach;
     public Action WormLaunched;
     AppleSpawn spawnPoint;
+
+    public enum Age
+    {
+        FRESH,
+        OLD,
+        ROTTEN,
+    }
+    public Age currentAge;
 
     bool isGrounded;
 
@@ -45,6 +55,7 @@ public class Apple : MonoBehaviour
         manager = GameManager.instance;
         wormRef = manager.playerRef;
         isAttached = true;
+        currentAge = Age.FRESH;
     }
 
     // Update is called once per frame
@@ -79,6 +90,29 @@ public class Apple : MonoBehaviour
             body.bodyType = RigidbodyType2D.Static;
         }
 
+        if (isAttached && !doesHaveWorm)
+        {
+            SetAge();
+        }
+    }
+
+    void SetAge()
+    {
+        oldTimer += Time.deltaTime;
+
+        if (oldTimer > timeUntilOld)
+        {
+            currentAge = Apple.Age.OLD;
+        }
+        if (oldTimer > timeUntilRotten)
+        {
+            currentAge = Apple.Age.ROTTEN;
+        }
+
+        if (currentAge == Age.ROTTEN)
+        {
+            health = 0;
+        }
     }
 
     public void Spawn(AppleSpawn spawn)
