@@ -13,6 +13,8 @@ public class AppleJuice : MonoBehaviour
     [SerializeField] AnimationCurve rotationInCurve;
     [SerializeField] float rotationInDuration;
     [SerializeField] float rotationAmount;
+    [SerializeField] ParticleSystem shakeParticle;
+    [SerializeField] float particlePlayChance;
     Coroutine shakeRoutine;
 
 
@@ -38,6 +40,11 @@ public class AppleJuice : MonoBehaviour
         if (shakeDir == Apple.ShakeDirections.RIGHT)
         {
             direction = 1;
+        }
+
+        if (Random.Range(0.0f, 100.0f) <= particlePlayChance)
+        {
+            shakeParticle.Play();
         }
 
         shakeRoutine = StartCoroutine(RotateAround(direction));
@@ -70,7 +77,7 @@ public class AppleJuice : MonoBehaviour
         elapsed = 0;
         while (elapsed < rotationInDuration)
         {
-            angle = (rotationInCurve.Evaluate(elapsed / rotationOutDuration) * rotationAmount);
+            angle = (rotationInCurve.Evaluate(1 - elapsed / rotationInDuration) * rotationAmount);
             ResetAppleVisual();
             shakeTransform.RotateAround(rotateAroundPoint.position, transform.forward, angle * direction);
             yield return null;

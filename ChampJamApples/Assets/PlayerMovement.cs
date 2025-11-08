@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float distanceUntilCanEnterApple;
     [SerializeField] float disableGravityVelocityThreshold;
     [SerializeField] float gravity;
+    [SerializeField] float maxFallSpeed;
+
     Apple previousApple;
     void Start()
     {
@@ -28,6 +30,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        Gravity();
+    }
+
+    void Gravity()
+    {
         Vector2 velocityMinusUp = rb.linearVelocity;
         velocityMinusUp = new Vector2(velocityMinusUp.x, Mathf.Clamp(velocityMinusUp.y, Mathf.NegativeInfinity, 0));
         if (velocityMinusUp.magnitude > disableGravityVelocityThreshold)
@@ -37,6 +44,11 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rb.gravityScale = gravity;
+        }
+
+        if (rb.linearVelocityY <= maxFallSpeed)
+        {
+            rb.gravityScale = 0;
         }
     }
 

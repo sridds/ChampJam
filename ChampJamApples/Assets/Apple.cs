@@ -7,12 +7,16 @@ public class Apple : MonoBehaviour
     [HideInInspector] public bool isAttached = true;
     PlayerMovement wormRef;
     GameManager manager;
+    [SerializeField] Rigidbody2D body;
 
     Vector2 dragDistance;
     [SerializeField] float maxDragDistance;
     [SerializeField] float launchMultiplier;
     [SerializeField] int health;
     [SerializeField] float fallSpeed;
+    [SerializeField] float popForce;
+    [SerializeField] float fallGravity;
+
 
     [Header("Arrow")]
     [SerializeField] GameObject arrow;
@@ -56,17 +60,24 @@ public class Apple : MonoBehaviour
 
     void DropApple()
     {
+        if (isAttached)
+        {
+            body.gravityScale = 0;
+        }
+
         if (health <= 0 && isAttached)
         {
             Debug.Log("Drop");
             //Drop Apple Effects
             isAttached = false;
             Deattach?.Invoke();
+            body.AddForce(new Vector2(0, popForce), ForceMode2D.Impulse);
         }
 
         if (!isAttached)
         {
-            transform.position -= new Vector3(0, fallSpeed, 0) * Time.deltaTime;
+            body.gravityScale = fallGravity;
+            body.linearVelocityY = Mathf.Clamp(body.linearVelocityY, fallSpeed, Mathf.Infinity);
         }
     }
 
