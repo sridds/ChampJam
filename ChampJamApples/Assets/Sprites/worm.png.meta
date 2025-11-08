@@ -837,6 +837,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: worm_20
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63dc5b56257ffd5479d193e053d73196
+      internalID: -1101549606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -876,6 +898,7 @@ TextureImporter:
       worm_18: -1060538494
       worm_19: -1802098265
       worm_2: 3333537666500559670
+      worm_20: -1101549606
       worm_3: -7591865148917879237
       worm_4: -1293923926150288066
       worm_5: 4940116343858292626

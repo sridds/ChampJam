@@ -19,6 +19,7 @@ public class VisionCircle : MonoBehaviour
     [SerializeField] float _flickerInterval;
     [SerializeField] int _flickerCount;
     [SerializeField] AudioClip _flickerClip;
+    [SerializeField] MetalGearSolidController _metalGearAlert;
 
     float cooldownTimer = 0;
     void Start()
@@ -79,6 +80,7 @@ public class VisionCircle : MonoBehaviour
         {
             if (Physics2D.OverlapCircle(transform.position, transform.localScale.x / 2, playerLayer))
             {
+                _metalGearAlert.ShowAlert();
                 StartCoroutine(Flicker());
                 GameManager.instance.TakeDamage();
                 cooldownTimer = 0;

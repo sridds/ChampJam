@@ -10194,7 +10194,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a09a5af1da33fb447834f682af2fba41, type: 3}
   - {fileID: 8300000, guid: a3d14520ee86088488a06ba14c780f97, type: 3}
   - {fileID: 8300000, guid: 55f3e8d3da2384a47996aa8f42e878e1, type: 3}
-  _appleKnockedSound: {fileID: 8300000, guid: 1ed356f2659e7e643954dff2abba7869, type: 3}
+  _appleKnockedSound: {fileID: 8300000, guid: 9a3b4c9db745ac64eb3f6dced5503cb6, type: 3}
   _pitchUpwardModification: 0.05
   enterParticle: {fileID: 5593203258995642389}
   _renderer: {fileID: 6650414545276564829}
