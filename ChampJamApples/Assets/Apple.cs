@@ -19,6 +19,7 @@ public class Apple : MonoBehaviour
     [SerializeField] float fallGravity;
     [SerializeField] float timeUntilOld;
     [SerializeField] float timeUntilRotten;
+    [SerializeField] ParticleSystem healParticle;
     float oldTimer = 0;
 
     [Header("Arrow")]
@@ -94,6 +95,13 @@ public class Apple : MonoBehaviour
         {
             SetAge();
         }
+
+        if (doesHaveWorm && !isAttached && currentAge == Age.ROTTEN)
+        {
+            healParticle.Play();
+            oldTimer = 0;
+            currentAge = Apple.Age.OLD;
+        }
     }
 
     void SetAge()
@@ -113,6 +121,8 @@ public class Apple : MonoBehaviour
         {
             health = 0;
         }
+
+
     }
 
     public void Spawn(AppleSpawn spawn)
