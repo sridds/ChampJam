@@ -1,6 +1,6 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
-using static AppleManager;
 
 public class VisionCircle : MonoBehaviour
 {
@@ -12,6 +12,14 @@ public class VisionCircle : MonoBehaviour
 
     [SerializeField] float damageCooldown;
     [SerializeField] LayerMask playerLayer;
+
+    [SerializeField] float _minOpacityRadius = 3.0f;
+    [SerializeField] float _maxOpacityRadius = 1.0f;
+    [SerializeField] SpriteRenderer _visionOutline;
+    [SerializeField] float _flickerInterval;
+    [SerializeField] int _flickerCount;
+    [SerializeField] AudioClip _flickerClip;
+
     float cooldownTimer = 0;
     void Start()
     {
@@ -40,8 +48,25 @@ public class VisionCircle : MonoBehaviour
         StartCoroutine(MovePosition());
     }
 
+    bool flag;
     private void Update()
     {
+        float distance = Vector2.Distance(transform.position, GameManager.instance.playerRef.transform.position);
+        float distanceClamped = Mathf.Clamp(distance, _maxOpacityRadius, _minOpacityRadius);
+        float normDistanceClamped = (distanceClamped - _maxOpacityRadius) / (_minOpacityRadius - _maxOpacityRadius);
+        float t = Mathf.Lerp(1.0f, 0.0f, normDistanceClamped);
+
+        if (GameManager.instance.playerRef.isActiveAndEnabled)
+        {
+            _visionOutline.color = new Color(255, 0, 0, t);
+            flag = false;
+        }
+        else if (!flag)
+        {
+            _visionOutline.DOKill(false);
+            _visionOutline.DOFade(0.0f, 0.3f);
+            flag = true;
+        }
 
         //Damage Player
         cooldownTimer += Time.deltaTime;
@@ -53,6 +78,8 @@ public class VisionCircle : MonoBehaviour
                 cooldownTimer = 0;
             }
         }
+
+
     }
 
     private void OnDrawGizmosSelected()
