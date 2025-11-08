@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     public void GetPoints(int amount)
     {
         score += amount;
+        UIManager.instance.SetScore(score);
     }
 
     void Death()

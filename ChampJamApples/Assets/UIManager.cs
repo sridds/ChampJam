@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
 
     [SerializeField] TextMeshProUGUI healthText;
+    [SerializeField] TextMeshProUGUI scoreText;
 
     private void Awake()
     {
@@ -21,5 +22,10 @@ public class UIManager : MonoBehaviour
     public void SetHealth(int health)
     {
         healthText.text = "HP " + health;
+    }
+
+    public void SetScore(int score)
+    {
+        scoreText.text = "SCORE\n" + score;
     }
 }
