@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class WormSegments : MonoBehaviour
@@ -15,28 +16,54 @@ public class WormSegments : MonoBehaviour
     [SerializeField]
     private WormSegment _head;
     [SerializeField]
-    private List<WormSegment> bodyParts = new List<WormSegment>();
+    private List<WormSegment> _bodyParts = new List<WormSegment>();
 
+    List<WormSegment> bodyParts = new List<WormSegment>();
     List<WormSegment> wormBody = new List<WormSegment>();
 
+    private int currentIndex;
+    private int initialLength;
+
     private float distanceTimer;
+    private bool initalized;
+
+    private void Setup()
+    {
+        currentIndex = 0;
+        initialLength = _bodyParts.Count;
+
+        for(int i = 0; i < _bodyParts.Count; i++)
+        {
+            bodyParts.Add(_bodyParts[i]);
+        }
+    }
 
     private void Start()
     {
+        Setup();
+        CreateBodyParts();
+        initalized = true;
+    }
+
+    private void OnEnable()
+    {
+        if (!initalized) return;
+
+        Debug.Log("Readying up!");
+        Setup();
         CreateBodyParts();
     }
 
-    private void OnDisable()
+    public void Clear()
     {
-        distanceTimer = 0.0f;
-
-        for (int i = 0; i < wormBody.Count; i++)
+        Debug.Log("I'm clearing!");
+        for (int i = 1; i < wormBody.Count; i++)
         {
-            wormBody[i].myMarkerManager.ClearMarkerList();
-
-            wormBody[i].transform.position = wormBody[0].transform.position;
-            wormBody[i].transform.rotation = wormBody[0].transform.rotation;
+            Destroy(wormBody[i].gameObject);
         }
+
+        bodyParts.Clear();
+        wormBody.Clear();
     }
 
     public void Pulse(float inTime, float strength, float outTime, Ease inEase, Ease outEase)
@@ -53,14 +80,6 @@ public class WormSegments : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Pulse(0.0f, 1.7f, 0.3f, Ease.Linear, Ease.OutQuad);
-        }
-    }
-
     private void FixedUpdate()
     {
         if (bodyParts.Count > 0)
@@ -72,7 +91,7 @@ public class WormSegments : MonoBehaviour
         {
             for(int i = 1; i < wormBody.Count; i++)
             {
-                MarkerManager marker = wormBody[i - 1].GetComponent<MarkerManager>();
+                MarkerManager marker = wormBody[i - 1].myMarkerManager;
                 wormBody[i].transform.position = marker.markers[0].position;
                 wormBody[i].transform.rotation = marker.markers[0].rotation;
                 marker.markers.RemoveAt(0);
@@ -101,6 +120,12 @@ public class WormSegments : MonoBehaviour
         if(distanceTimer >= _distanceBetween)
         {
             WormSegment temp = Instantiate(bodyParts[0], marker.markers[0].position, marker.markers[0].rotation, transform);
+
+            float scale = Mathf.Lerp(1.0f, _minScaleFalloff, (float)currentIndex / (float)initialLength);
+            currentIndex++;
+
+            temp.transform.localScale = Vector3.one * scale;
+
             wormBody.Add(temp);
             bodyParts.RemoveAt(0);
             temp.myMarkerManager.ClearMarkerList();

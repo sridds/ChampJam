@@ -5,6 +5,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float movementSpeed;
     [SerializeField] float manualSlowDownMultiplier;
+    [SerializeField] MarkerManager myMarkerManager;
+    [SerializeField] WormSegments wormSegments;
 
     [SerializeField] float slowSpeed;
     [SerializeField] float slowdownThreshold;
@@ -125,6 +127,11 @@ public class PlayerMovement : MonoBehaviour
                 }
 
                 appleScript.Enter(transform.position);
+
+                transform.position = appleScript.transform.position;
+                myMarkerManager.ClearMarkerList();
+                wormSegments.Clear();
+
                 previousApple = appleScript;
                 gameObject.SetActive(false);
             }

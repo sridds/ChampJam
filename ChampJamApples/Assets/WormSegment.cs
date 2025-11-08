@@ -21,6 +21,14 @@ public class WormSegment : MonoBehaviour
         }
     }
 
+    public void SetVisibilty(bool visibilty)
+    {
+        for(int i = 0; i < _renderers.Length; i++)
+        {
+            _renderers[i].enabled = visibilty;
+        }
+    }
+
     public void Pulse(float inTime, float strength, float outTime, Ease inEase, Ease outEase)
     {
         for(int i = 0; i < _renderers.Length; i++)
