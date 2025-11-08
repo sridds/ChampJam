@@ -21,9 +21,9 @@ public class WormVisuals : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField]
-    private AudioSource _source;
-    [SerializeField]
     private AudioClip _munchClip;
+    [SerializeField]
+    private AudioClip _gulpClip;
 
     [Header("Sprite Animations")]
     [SerializeField]
@@ -73,7 +73,8 @@ public class WormVisuals : MonoBehaviour
     {
         for (int i = 0; i < _chewCycles; i++)
         {
-            _source.PlayOneShot(_munchClip);
+            AudioManager.instance.PlaySound(_munchClip, Random.Range(0.9f, 1.0f), 1.0f);
+
             for(int j = 0; j < _chewSprites.Length; j++)
             {
                 _wormHeadRenderer.sprite = _chewSprites[j];
@@ -83,6 +84,8 @@ public class WormVisuals : MonoBehaviour
 
         _wormHeadRenderer.sprite = _swallowSpriteA;
         yield return new WaitForSeconds(_swallowFrameDuration);
+
+        AudioManager.instance.PlaySound(_gulpClip, Random.Range(0.9f, 1.0f), 1.0f);
         _segments.Pulse(0.0f, 1.6f, 0.1f, DG.Tweening.Ease.Linear, DG.Tweening.Ease.OutQuad);
         _wormHeadRenderer.sprite = _swallowSpriteB;
         yield return new WaitForSeconds(_swallowFrameDuration);
