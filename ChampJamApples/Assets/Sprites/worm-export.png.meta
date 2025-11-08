@@ -162,6 +162,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -684,7 +697,30 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      worm-export_0: -7940371318648291062
+      worm-export_1: 4403421094794981657
+      worm-export_10: 2093949877580492213
+      worm-export_11: -2446260154429049039
+      worm-export_12: -1145038995221857258
+      worm-export_13: 1887273920892221832
+      worm-export_14: 9074338376884841868
+      worm-export_15: -5707079468216059312
+      worm-export_16: -3099212909034916620
+      worm-export_17: 891994375355737267
+      worm-export_18: 6911267812905573010
+      worm-export_19: -8763310634092914578
+      worm-export_2: 5154860450267308705
+      worm-export_20: 2297147830447416605
+      worm-export_21: -40055117688737087
+      worm-export_22: -4152693205519673031
+      worm-export_3: 8925937989082332739
+      worm-export_4: 6204540750258254170
+      worm-export_5: -9062758321701299945
+      worm-export_6: -7362627212886815565
+      worm-export_7: -5634687650748316365
+      worm-export_8: 1215107626573242721
+      worm-export_9: -1636095491748122010
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

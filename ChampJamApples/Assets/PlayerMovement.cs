@@ -38,6 +38,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Gravity();
+
+        if (transform.position.y <= -6)
+        {
+            transform.position = new Vector2(transform.position.x, -6);
+            Bounce(9, transform.position);
+        }
     }
 
     void Gravity()
@@ -70,6 +76,16 @@ public class PlayerMovement : MonoBehaviour
         gameObject.transform.position = startPos;
         myMarkerManager.ClearMarkerList();
         rb.AddForce(launch, ForceMode2D.Impulse);
+
+        OnLaunch?.Invoke();
+    }
+
+    public void Bounce(float bounce, Vector2 startPos)
+    {
+        gameObject.SetActive(true);
+        gameObject.transform.position = startPos;
+        myMarkerManager.ClearMarkerList();
+        rb.linearVelocityY = bounce;
 
         OnLaunch?.Invoke();
     }

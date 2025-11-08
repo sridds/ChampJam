@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static AppleManager;
 
 public class VisionCircle : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class VisionCircle : MonoBehaviour
     [SerializeField] Vector2 areaBounds;
     [SerializeField] Vector2 areaCenter;
 
+    [SerializeField] float damageCooldown;
+    [SerializeField] LayerMask playerLayer;
+    float cooldownTimer = 0;
     void Start()
     {
         StartCoroutine(MovePosition());
@@ -36,7 +40,22 @@ public class VisionCircle : MonoBehaviour
         StartCoroutine(MovePosition());
     }
 
-    private void OnDrawGizmos()
+    private void Update()
+    {
+
+        //Damage Player
+        cooldownTimer += Time.deltaTime;
+        if (cooldownTimer > damageCooldown)
+        {
+            if (Physics2D.OverlapCircle(transform.position, transform.localScale.x / 2, playerLayer))
+            {
+                GameManager.instance.TakeDamage();
+                cooldownTimer = 0;
+            }
+        }
+    }
+
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = new Color(0.3f, 0.5f, 1.0f, 0.4f);
         Gizmos.DrawCube(areaCenter, areaBounds);

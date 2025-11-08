@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public PlayerMovement playerRef;
+    public int playerHealth;
+
 
     void Awake()
     {
@@ -25,5 +27,19 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+    }
+
+    public void TakeDamage()
+    {
+        playerHealth--;
+        if (playerHealth <= 0)
+        {
+            Death();
+        }
+    }
+
+    void Death()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
