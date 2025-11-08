@@ -517,6 +517,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77bb3104d789a1f438c4f89cbb456f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &1085525168 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3693878220008561136, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
+  m_PrefabInstance: {fileID: 1085525166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1103453726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,6 +1134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Offscreen Warning
       objectReference: {fileID: 0}
+    - target: {fileID: 7226030001922958037, guid: 0731a0c8ae173524f9cc1155139270f0, type: 3}
+      propertyPath: playerHeadReference
+      value: 
+      objectReference: {fileID: 1085525168}
     - target: {fileID: 8273899944678236341, guid: 0731a0c8ae173524f9cc1155139270f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
