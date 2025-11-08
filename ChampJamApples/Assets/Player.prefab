@@ -86,6 +86,8 @@ MonoBehaviour:
   rb: {fileID: 2102773036630975241}
   movementSpeed: 6
   manualSlowDownMultiplier: 4
+  myMarkerManager: {fileID: 0}
+  wormSegments: {fileID: 0}
   slowSpeed: 3
   slowdownThreshold: 1
   maxInputtableVelocity: 5
@@ -168,11 +170,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2190e9ba84358bd42aafb0a7bee98f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distanceBetween: 0.04
-  _minScaleFalloff: 0.5
+  _distanceBetween: 0.05
+  _minScaleFalloff: 0.45
   _head: {fileID: 1425344687669605730}
-  bodyParts:
-  - {fileID: 1425344687669605730}
+  _bodyParts:
   - {fileID: -8182218335043264917, guid: 33350a0c7b87d2049a66804bfb82def1, type: 3}
   - {fileID: -8182218335043264917, guid: 33350a0c7b87d2049a66804bfb82def1, type: 3}
   - {fileID: -8182218335043264917, guid: 33350a0c7b87d2049a66804bfb82def1, type: 3}
@@ -205,6 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3398c7ff901a3e49ba69edad8b070df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  markers: []
 --- !u!114 &5063558578496049276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +221,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _body: {fileID: 2102773036630975241}
   _wormHeadRenderer: {fileID: 3693878220008561136}
+  _segments: {fileID: 4622385031443136852}
+  _defaultSprite: {fileID: -897107974938402584, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  _chewSprites:
+  - {fileID: 3333537666500559670, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  - {fileID: -1379284931105554088, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  _swallowSpriteA: {fileID: -7591865148917879237, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  _swallowSpriteB: {fileID: -1293923926150288066, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  _chewCycles: 4
+  _chewFrameDuration: 0.05
+  _swallowFrameDuration: 0.15
 --- !u!1 &5992365143083693988
 GameObject:
   m_ObjectHideFlags: 0
