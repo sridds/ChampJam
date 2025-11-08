@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public void TakeDamage()
     {
         playerHealth--;
+        UIManager.instance.SetHealth(playerHealth);
         if (playerHealth <= 0)
         {
             Death();
