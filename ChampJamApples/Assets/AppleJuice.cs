@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AppleJuice : MonoBehaviour
@@ -37,6 +38,10 @@ public class AppleJuice : MonoBehaviour
     [SerializeField] SpriteRenderer _renderer;
     [SerializeField] Sprite _spriteFlicker;
     [SerializeField] Sprite[] _fallSprites;
+    [SerializeField] Sprite[] _fallSpritesOld;
+    [SerializeField] Sprite[] _fallSpritesRotten;
+    List<Sprite> currentFallSprites = new();
+
     [SerializeField] float _frameInterval;
 
     [Header("Worm Inside")]
@@ -114,6 +119,41 @@ public class AppleJuice : MonoBehaviour
     int index;
     private void Update()
     {
+        currentFallSprites.Clear();
+
+        switch (appleRef.currentAge)
+        {
+            case Apple.Age.FRESH:
+                currentFallSprites.AddRange(_fallSprites);
+                break;
+
+            case Apple.Age.OLD:
+                currentFallSprites.AddRange(_fallSpritesOld);
+                break;
+
+            case Apple.Age.ROTTEN:
+                currentFallSprites.AddRange(_fallSpritesRotten);
+                break;
+        }
+
+        if (appleRef.isAttached)
+        {
+            switch (appleRef.currentAge)
+            {
+                case Apple.Age.FRESH:
+                    _renderer.sprite = _fallSprites[0];
+                    break;
+
+                case Apple.Age.OLD:
+                    _renderer.sprite = _fallSpritesOld[0];
+                    break;
+
+                case Apple.Age.ROTTEN:
+                    _renderer.sprite = _fallSpritesRotten[0];
+                    break;
+            }
+        }
+
         if (breakoffFlag)
         {
             timer += Time.deltaTime;
@@ -121,7 +161,7 @@ public class AppleJuice : MonoBehaviour
             if(timer > _frameInterval)
             {
                 index++;
-                _renderer.sprite = _fallSprites[index % _fallSprites.Length];
+                _renderer.sprite = currentFallSprites[index % _fallSprites.Length];
                 timer = 0.0f;
             }
         }
@@ -201,5 +241,20 @@ public class AppleJuice : MonoBehaviour
     {
         shakeTransform.eulerAngles = Vector3.zero;
         shakeTransform.localPosition = Vector3.zero;
+
+        switch (appleRef.currentAge)
+        {
+            case Apple.Age.FRESH:
+                _renderer.sprite = _fallSprites[0];
+                break;
+
+            case Apple.Age.OLD:
+                _renderer.sprite = _fallSpritesOld[0];
+                break;
+
+            case Apple.Age.ROTTEN:
+                _renderer.sprite = _fallSpritesRotten[0];
+                break;
+        }
     }
 }

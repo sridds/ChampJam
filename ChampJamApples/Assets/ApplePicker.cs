@@ -42,7 +42,14 @@ public class ApplePicker : MonoBehaviour
 
     void PickUpApple(Apple apple)
     {
-        GameManager.instance.GetPoints(100);
+        if (apple.currentAge == Apple.Age.ROTTEN)
+        {
+            GameManager.instance.TakeDamage();
+        }
+        else
+        {
+            GameManager.instance.GetPoints(100);
+        }
         AppleManager.instance.RemoveGroundApple(apple);
         Destroy(apple.gameObject);
     }
