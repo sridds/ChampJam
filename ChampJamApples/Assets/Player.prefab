@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1110927713416548159}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 1425344687669605730}
   - component: {fileID: 9208407288121156079}
   - component: {fileID: 5063558578496049276}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -91,10 +91,10 @@ MonoBehaviour:
   slowSpeed: 3
   slowdownThreshold: 1
   maxInputtableVelocity: 5
-  distanceUntilCanEnterApple: 0.7
+  distanceUntilCanEnterApple: 0.6
   disableGravityVelocityThreshold: 15
   gravity: 1.5
-  bottomBounceForce: 0
+  bottomBounceForce: 19
   maxFallSpeed: -9
 --- !u!50 &2102773036630975241
 Rigidbody2D:
@@ -245,7 +245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2029608277694927924}
   - component: {fileID: 3693878220008561136}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}

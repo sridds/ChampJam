@@ -60,10 +60,10 @@ public class Apple : MonoBehaviour
 
         DropApple();
 
-        if (doesHaveWorm && transform.position.y <= -6)
+        if (doesHaveWorm && transform.position.y <= -7)
         {
             doesHaveWorm = false;
-            wormRef.Bounce(transform.position);
+            wormRef.Bounce(transform.position, true);
         }
 
     }

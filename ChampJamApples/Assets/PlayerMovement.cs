@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     Apple previousApple;
     public Action OnLaunch;
-
+    float bounceCooldownTimer;
     void Start()
     {
         
@@ -40,11 +40,13 @@ public class PlayerMovement : MonoBehaviour
 
         Gravity();
 
-        if (transform.position.y <= -6)
+        if (transform.position.y <= -7)
         {
-            transform.position = new Vector2(transform.position.x, -6);
-            Bounce(transform.position);
+            transform.position = new Vector2(transform.position.x, -7);
+            Bounce(transform.position, false);
         }
+
+        bounceCooldownTimer += Time.deltaTime;
     }
 
     void Gravity()
@@ -81,14 +83,23 @@ public class PlayerMovement : MonoBehaviour
         OnLaunch?.Invoke();
     }
 
-    public void Bounce(Vector2 startPos)
+    public void Bounce(Vector2 startPos, bool fromApple)
     {
         gameObject.SetActive(true);
         gameObject.transform.position = startPos;
         myMarkerManager.ClearMarkerList();
         rb.linearVelocityY = bottomBounceForce;
 
-        OnLaunch?.Invoke();
+        if (bounceCooldownTimer > 0.1f)
+        {
+            bounceCooldownTimer = 0;
+            GameManager.instance.TakeDamage();
+        }
+
+        if (fromApple)
+        {
+            OnLaunch?.Invoke();
+        }
     }
 
     public void ManualMovement()
