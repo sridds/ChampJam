@@ -225,7 +225,7 @@ MonoBehaviour:
   _segments: {fileID: 4622385031443136852}
   _movement: {fileID: 2220365588624077864}
   _munchClip: {fileID: 8300000, guid: 2cb00c467f95649439973c8d6db8ac9d, type: 3}
-  _gulpClip: {fileID: 8300000, guid: ad0c37c73d442534f8dcc3b09b6111d8, type: 3}
+  _gulpClip: {fileID: 8300000, guid: 29755c59ed75de942b683812b5f7f8bb, type: 3}
   _defaultSprite: {fileID: -897107974938402584, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   _chewSprites:
   - {fileID: 3333537666500559670, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
@@ -233,8 +233,8 @@ MonoBehaviour:
   _swallowSpriteA: {fileID: -7591865148917879237, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   _swallowSpriteB: {fileID: -1293923926150288066, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   _chewCycles: 2
-  _chewFrameDuration: 0.15
-  _swallowFrameDuration: 0.15
+  _chewFrameDuration: 0.1
+  _swallowFrameDuration: 0.06
 --- !u!1 &5992365143083693988
 GameObject:
   m_ObjectHideFlags: 0

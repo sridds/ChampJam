@@ -254,3 +254,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenTop: 8
   visuals: {fileID: 880973134531886943}
+  headSpriteReference: {fileID: 6378558988742606637}
+  playerHeadReference: {fileID: 0}

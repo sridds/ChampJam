@@ -6,6 +6,9 @@ public class OffscreenWarning : MonoBehaviour
     [SerializeField] float screenTop;
 
     [SerializeField] GameObject visuals;
+    [SerializeField] SpriteRenderer headSpriteReference;
+    [SerializeField] SpriteRenderer playerHeadReference;
+
     void Start()
     {
         playerRef = GameManager.instance.playerRef.gameObject;
@@ -23,6 +26,7 @@ public class OffscreenWarning : MonoBehaviour
             visuals.SetActive(false);
         }
 
+        headSpriteReference.sprite = playerHeadReference.sprite;
         transform.position = new Vector2(playerRef.transform.position.x, transform.position.y);
     }
 }

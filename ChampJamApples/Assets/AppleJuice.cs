@@ -96,7 +96,7 @@ public class AppleJuice : MonoBehaviour
 
     void BreakOff()
     {
-        CameraJuice.instance.AddShakeEvent(new Vector3(1.3f, 0.0f), 10f, 0.3f, ShakeData.Target.Position, DG.Tweening.Ease.OutQuad);
+        CameraJuice.instance.AddShakeEvent(new Vector3(1.5f, 0.0f), 10f, 0.3f, ShakeData.Target.Position, DG.Tweening.Ease.OutQuad);
         AudioManager.instance.PlaySound(_appleKnockedSound, Random.Range(0.9f, 1.0f), 1.0f);
 
         if (shakeRoutine != null)
