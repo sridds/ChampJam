@@ -477,7 +477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3490574432494885991, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.13
+      value: 5.06
       objectReference: {fileID: 0}
     - target: {fileID: 3490574432494885991, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
       propertyPath: m_LocalPosition.z
@@ -593,17 +593,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1916573763}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1258312103 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6783608731509395592, guid: a859f83ceb3521543bc5c6185c61ce10, type: 3}
-  m_PrefabInstance: {fileID: 5441233829569471323}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f50b7cede7c188f4aac2e42d54636879, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1308657976
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,7 +809,7 @@ MonoBehaviour:
   - spawnPoint: {fileID: 949499254}
     currentApple: {fileID: 0}
   - spawnPoint: {fileID: 2017896887}
-    currentApple: {fileID: 1258312103}
+    currentApple: {fileID: 0}
   - spawnPoint: {fileID: 72706523}
     currentApple: {fileID: 0}
   - spawnPoint: {fileID: 157444968}
@@ -933,7 +922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5569550965336456849, guid: a859f83ceb3521543bc5c6185c61ce10, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.75
+      value: 3.92
       objectReference: {fileID: 0}
     - target: {fileID: 5569550965336456849, guid: a859f83ceb3521543bc5c6185c61ce10, type: 3}
       propertyPath: m_LocalPosition.z

@@ -79,7 +79,7 @@ public class Apple : MonoBehaviour
             isAttached = false;
             if (spawnPoint != null)
             {
-                spawnPoint.currentApple = null;
+                AppleManager.instance.detachApple(spawnPoint);
             }
             Deattach?.Invoke();
             body.AddForce(new Vector2(0, popForce), ForceMode2D.Impulse);

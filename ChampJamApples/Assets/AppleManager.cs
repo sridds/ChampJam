@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class AppleManager : MonoBehaviour
 {
+    public static AppleManager instance;
     [SerializeField] Apple applePrefab;
     [SerializeField] List<AppleSpawn> appleSpawns;
     [SerializeField] float startSpawnDelay;
@@ -12,6 +13,8 @@ public class AppleManager : MonoBehaviour
     float spawnTimer;
     float playtime =0 ;
 
+    int numAttachedApples = 0;
+
     [System.Serializable]
     public class AppleSpawn
     {
@@ -19,9 +22,28 @@ public class AppleManager : MonoBehaviour
         public Apple currentApple;
     }
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
-        
+        foreach (AppleSpawn appleSpawn in appleSpawns)
+        {
+            if (appleSpawn.currentApple != null)
+            {
+                numAttachedApples++;
+            }
+        }
+
     }
 
     // Update is called once per frame
@@ -38,6 +60,11 @@ public class AppleManager : MonoBehaviour
         {
             SpawnApple();
             spawnTimer = 0;
+        }
+
+        if (numAttachedApples < 2)
+        {
+            SpawnApple();
         }
     }
 
@@ -61,6 +88,13 @@ public class AppleManager : MonoBehaviour
         Apple newApple = Instantiate(applePrefab, possibleSpawns[randomSpawn].spawnPoint.position, Quaternion.identity);
         newApple.Spawn(possibleSpawns[randomSpawn]);
         possibleSpawns[randomSpawn].currentApple = newApple;
+        numAttachedApples++;
+    }
+
+    public void detachApple(AppleSpawn theSpawn)
+    {
+        theSpawn.currentApple = null;
+        numAttachedApples--;
     }
 
     void ControlAppleSpawnTime()
