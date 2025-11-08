@@ -438,6 +438,7 @@ GameObject:
   - component: {fileID: 1556839049}
   - component: {fileID: 1556839051}
   - component: {fileID: 1556839050}
+  - component: {fileID: 1556839052}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -556,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2190e9ba84358bd42aafb0a7bee98f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distanceBetween: 0.03
+  _distanceBetween: 0.04
   _minScaleFalloff: 0.5
   _head: {fileID: 1556839051}
   bodyParts:
@@ -590,8 +591,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46c77f10d6e9a641bb4f616a2b9c15e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _myMarkerManager: {fileID: 0}
-  _spriteRenderer: {fileID: 0}
+  _myMarkerManager: {fileID: 1556839050}
+  _renderers:
+  - {fileID: 1582464321}
+--- !u!114 &1556839052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556839044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb2033951a6c494298699e5e55144de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _body: {fileID: 1556839046}
+  _wormHeadRenderer: {fileID: 1582464321}
 --- !u!1 &1582464319
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +684,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1379284931105554088, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
+  m_Sprite: {fileID: -897107974938402584, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
