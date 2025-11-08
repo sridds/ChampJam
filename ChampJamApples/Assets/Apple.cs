@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Apple : MonoBehaviour
@@ -25,6 +26,7 @@ public class Apple : MonoBehaviour
 
     public Action<ShakeDirections> Shake;
     public Action Deattach;
+    public Action<Vector2> Attach;
 
     public enum ShakeDirections
     {
@@ -137,13 +139,12 @@ public class Apple : MonoBehaviour
     void WormLaunch()
     {
         doesHaveWorm = false;
-        Debug.Log(dragDistance);
-        Debug.Log(dragDistance * launchMultiplier);
         wormRef.Launch(dragDistance * launchMultiplier, transform.position);
     }
 
-    public void Enter()
+    public void Enter(Vector3 enterPos)
     {
+        Attach?.Invoke(enterPos);
         doesHaveWorm = true;
     }
 }

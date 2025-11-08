@@ -17,11 +17,15 @@ public class AppleJuice : MonoBehaviour
     [SerializeField] float particlePlayChance;
     Coroutine shakeRoutine;
 
+    [Header("Enter")]
+    [SerializeField] ParticleSystem enterParticle;
+
 
     void Awake()
     {
         appleRef.Shake += ShakeVisual;
         appleRef.Deattach += BreakOff;
+        appleRef.Attach += AppleEnterEffects;
     }
 
     // Update is called once per frame
@@ -84,7 +88,27 @@ public class AppleJuice : MonoBehaviour
             elapsed += Time.deltaTime;
         }
     }
-    
+
+    void AppleEnterEffects(Vector2 enterPosition)
+    {
+        Vector2 enterDirection = ((Vector2)transform.position - enterPosition).normalized;
+
+        if (shakeRoutine != null)
+        {
+            StopCoroutine(shakeRoutine);
+        }
+
+        if (enterDirection.x > 0)
+        {
+            shakeRoutine = StartCoroutine(RotateAround(1));
+        }
+        if (enterDirection.x < 0)
+        {
+            shakeRoutine = StartCoroutine(RotateAround(-1));
+        }
+
+        enterParticle.Play();
+    }
     void ResetAppleVisual()
     {
         shakeTransform.eulerAngles = Vector3.zero;

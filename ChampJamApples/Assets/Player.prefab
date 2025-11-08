@@ -85,6 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2102773036630975241}
   movementSpeed: 6
+  manualSlowDownMultiplier: 4
   slowSpeed: 3
   slowdownThreshold: 1
   maxInputtableVelocity: 5

@@ -4,6 +4,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float movementSpeed;
+    [SerializeField] float manualSlowDownMultiplier;
+
     [SerializeField] float slowSpeed;
     [SerializeField] float slowdownThreshold;
     [SerializeField] float maxInputtableVelocity;
@@ -71,13 +73,31 @@ public class PlayerMovement : MonoBehaviour
         //If trying to manually speed up past the max, don't. (RIGHT)
         if (rb.linearVelocity.x > maxInputtableVelocity)
         {
-            horizontalForce = 0;
+            if (horizontalForce > 0)
+            {
+                horizontalForce = 0;
+            }
         }
 
         //If trying to manually speed up past the max, don't. (LEFT)
         if (rb.linearVelocity.x < -maxInputtableVelocity)
         {
-            horizontalForce = 0;
+            if (horizontalForce < 0)
+            {
+                horizontalForce = 0;
+            }
+        }
+
+        if (horizontalForce < 0 && rb.linearVelocity.x > 0)
+        {
+            Debug.Log("true");
+            horizontalForce *= manualSlowDownMultiplier;
+        }
+
+        if (horizontalForce > 0 && rb.linearVelocity.x < 0)
+        {
+            Debug.Log("true");
+            horizontalForce *= manualSlowDownMultiplier;
         }
 
         Vector3 force = new Vector2(horizontalForce, 0);
@@ -104,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
                     return;
                 }
 
-                appleScript.Enter();
+                appleScript.Enter(transform.position);
                 previousApple = appleScript;
                 gameObject.SetActive(false);
             }
