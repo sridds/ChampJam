@@ -78,6 +78,7 @@ public class VisionCircle : MonoBehaviour
 
         if (cooldownTimer > damageCooldown)
         {
+            Debug.DrawLine(transform.position, new Vector3(0, transform.localScale.x / 2, 0) + transform.position); 
             if (Physics2D.OverlapCircle(transform.position, transform.localScale.x / 2, playerLayer))
             {
                 _metalGearAlert.ShowAlert();

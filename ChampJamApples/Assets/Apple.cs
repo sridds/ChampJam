@@ -156,7 +156,7 @@ public class Apple : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            dragDistance = new Vector2(transform.position.x, transform.position.y) - mousePos;
+            dragDistance = mousePos - new Vector2(transform.position.x, transform.position.y);
             dragDistance = Vector2.ClampMagnitude(dragDistance, maxDragDistance);
 
             //Arrow
