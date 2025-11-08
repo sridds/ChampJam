@@ -435,6 +435,9 @@ GameObject:
   - component: {fileID: 1556839047}
   - component: {fileID: 1556839046}
   - component: {fileID: 1556839048}
+  - component: {fileID: 1556839049}
+  - component: {fileID: 1556839051}
+  - component: {fileID: 1556839050}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -541,6 +544,54 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.25
+--- !u!114 &1556839049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556839044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2190e9ba84358bd42aafb0a7bee98f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _distanceBetween: 0.03
+  _minScaleFalloff: 0.5
+  _head: {fileID: 1556839051}
+  bodyParts:
+  - {fileID: 1556839051}
+  - {fileID: -8182218335043264917, guid: 33350a0c7b87d2049a66804bfb82def1, type: 3}
+  - {fileID: -8182218335043264917, guid: 33350a0c7b87d2049a66804bfb82def1, type: 3}
+  - {fileID: -8182218335043264917, guid: 33350a0c7b87d2049a66804bfb82def1, type: 3}
+  - {fileID: -8182218335043264917, guid: 33350a0c7b87d2049a66804bfb82def1, type: 3}
+  - {fileID: -8182218335043264917, guid: 33350a0c7b87d2049a66804bfb82def1, type: 3}
+--- !u!114 &1556839050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556839044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3398c7ff901a3e49ba69edad8b070df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1556839051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556839044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a46c77f10d6e9a641bb4f616a2b9c15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _myMarkerManager: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &1582464319
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +667,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1379284931105554088, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
