@@ -12,7 +12,7 @@ public class AppleManager : MonoBehaviour
     float spawnDelay;
     float spawnTimer;
     float playtime =0 ;
-
+    [SerializeField] LayerMask appleLayer;
     int numAttachedApples = 0;
 
     [System.Serializable]
@@ -73,10 +73,18 @@ public class AppleManager : MonoBehaviour
         List<AppleSpawn> possibleSpawns = new();
         foreach(AppleSpawn appleSpawn in appleSpawns)
         {
-            if (appleSpawn.currentApple == null)
+            if (appleSpawn.currentApple != null)
             {
-                possibleSpawns.Add(appleSpawn);
+                continue;
             }
+
+            if (Physics2D.OverlapCircle(appleSpawn.spawnPoint.position, 1.5f, appleLayer))
+            {
+                continue;
+            }
+
+            possibleSpawns.Add(appleSpawn);
+
         }
 
         if (possibleSpawns.Count == 0)
