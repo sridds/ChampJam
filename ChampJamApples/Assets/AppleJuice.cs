@@ -17,6 +17,12 @@ public class AppleJuice : MonoBehaviour
     [SerializeField] float particlePlayChance;
     Coroutine shakeRoutine;
 
+    [Header("Audio")]
+    [SerializeField] AudioClip _enterAppleSound;
+    [SerializeField] AudioClip _exitAppleSound;
+    [SerializeField] AudioClip _swingAppleSound;
+    [SerializeField] AudioClip _appleKnockedSound;
+
     [Header("Enter")]
     [SerializeField] ParticleSystem enterParticle;
 
@@ -39,7 +45,13 @@ public class AppleJuice : MonoBehaviour
         appleRef.Shake += ShakeVisual;
         appleRef.Deattach += BreakOff;
         appleRef.Attach += AppleEnterEffects;
-        appleRef.WormLaunched += HideWorm;
+        appleRef.WormLaunched += ExitApple;
+    }
+
+    void ExitApple()
+    {
+        AudioManager.instance.PlaySound(_exitAppleSound, Random.Range(0.9f, 1.0f), 1.0f);
+        HideWorm();
     }
 
     // Update is called once per frame
@@ -70,6 +82,8 @@ public class AppleJuice : MonoBehaviour
 
     void BreakOff()
     {
+        AudioManager.instance.PlaySound(_appleKnockedSound, Random.Range(0.9f, 1.0f), 1.0f);
+
         if (shakeRoutine != null)
         {
             StopCoroutine(shakeRoutine);
@@ -128,6 +142,7 @@ public class AppleJuice : MonoBehaviour
 
     void AppleEnterEffects(Vector2 enterPosition, Vector2 enterVelocity)
     {
+        AudioManager.instance.PlaySound(_enterAppleSound, Random.Range(0.9f, 1.0f), 1.0f);
         Vector2 enterDirection = enterVelocity.normalized;
         //Vector2 enterDirection = ((Vector2)transform.position - enterPosition).normalized;
 

@@ -94,6 +94,7 @@ MonoBehaviour:
   distanceUntilCanEnterApple: 0.7
   disableGravityVelocityThreshold: 15
   gravity: 1.5
+  bottomBounceForce: 0
   maxFallSpeed: -9
 --- !u!50 &2102773036630975241
 Rigidbody2D:
@@ -231,8 +232,8 @@ MonoBehaviour:
   - {fileID: -1379284931105554088, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   _swallowSpriteA: {fileID: -7591865148917879237, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   _swallowSpriteB: {fileID: -1293923926150288066, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
-  _chewCycles: 4
-  _chewFrameDuration: 0.05
+  _chewCycles: 2
+  _chewFrameDuration: 0.15
   _swallowFrameDuration: 0.15
 --- !u!1 &5992365143083693988
 GameObject:
