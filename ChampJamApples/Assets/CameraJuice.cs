@@ -1,8 +1,7 @@
-using DG.Tweening;
-using DG.Tweening.Core.Easing;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
+using DG.Tweening.Core.Easing;
+using DG.Tweening;
 
 public class CameraJuice : MonoBehaviour
 {
@@ -28,6 +27,7 @@ public class CameraJuice : MonoBehaviour
 
         public ShakeEvent (ShakeData data)
         {
+            this.data = data;
             duration = data.duration;
             timeRemaining = duration;
 
@@ -35,6 +35,7 @@ public class CameraJuice : MonoBehaviour
 
             noiseOffset.x = Random.Range(0.0f, rand);
             noiseOffset.y = Random.Range(0.0f, rand);
+            noiseOffset.z = Random.Range(0.0f, rand);
         }
 
         public void Update()
@@ -83,7 +84,21 @@ public class CameraJuice : MonoBehaviour
     [SerializeField]
     private Transform _shakeTarget;
     [SerializeField]
+    private Transform _punchTarget;
+    [SerializeField]
     private int _pixelsPerUnit = 16;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void AddShakeEvent(ShakeData data)
     {
@@ -101,6 +116,12 @@ public class CameraJuice : MonoBehaviour
         data.useUnscaledTime = useUnscaledTime;
 
         AddShakeEvent(data);
+    }
+
+    public void AddCameraPunch(float zPunchAmount, float duration, int vibrato, float elasticity)
+    {
+        _punchTarget.DOKill(true);
+        _punchTarget.DOPunchRotation(new Vector3(0, 0, zPunchAmount), duration, vibrato, elasticity);
     }
 
     private void LateUpdate()
@@ -127,10 +148,10 @@ public class CameraJuice : MonoBehaviour
             }
         }
 
-        localShakePosition = RoundToPixelPerfect(positionOffset);
+        localShakePosition = positionOffset;
         localShakeEulerAngles = rotationOffset;
 
-        _shakeTarget.localPosition = localShakePosition;
+        _shakeTarget.localPosition = RoundToPixelPerfect(localShakePosition);
         _shakeTarget.localEulerAngles = localShakeEulerAngles;
     }
 

@@ -17,6 +17,12 @@ public class AppleJuice : MonoBehaviour
     [SerializeField] float particlePlayChance;
     Coroutine shakeRoutine;
 
+    [Header("Camera Shake")]
+    [SerializeField] float _shakeZBaseAmount = 1.0f;
+    [SerializeField] float _shakeZIncreaseAmount = 0.5f;
+    [SerializeField] int _shakeVibrato = 10;
+    [SerializeField] float _elasticity = 1.0f;
+
     [Header("Audio")]
     [SerializeField] AudioClip _enterAppleSound;
     [SerializeField] AudioClip _exitAppleSound;
@@ -59,6 +65,7 @@ public class AppleJuice : MonoBehaviour
     // Update is called once per frame
     void ShakeVisual(Apple.ShakeDirections shakeDir)
     {
+        //CameraJuice.instance.AddShakeEvent(new Vector3(0.0f, 0.0f, _shakeZBaseAmount + (_shakeZIncreaseAmount * shakeIndex)), _shakeFrequency, 0.3f, ShakeData.Target.Rotation, DG.Tweening.Ease.OutQuad);
         AudioManager.instance.PlaySound(_swingAppleSound[shakeIndex], 1.0f + (_pitchUpwardModification * shakeIndex), 1.0f);
         shakeIndex++;
 
@@ -77,6 +84,8 @@ public class AppleJuice : MonoBehaviour
             direction = 1;
         }
 
+        CameraJuice.instance.AddCameraPunch(-direction * (_shakeZBaseAmount + (_shakeZIncreaseAmount * shakeIndex)), 0.3f, _shakeVibrato, _elasticity);
+
         if (Random.Range(0.0f, 100.0f) <= particlePlayChance)
         {
             shakeParticle.Play();
@@ -87,6 +96,7 @@ public class AppleJuice : MonoBehaviour
 
     void BreakOff()
     {
+        CameraJuice.instance.AddShakeEvent(new Vector3(1.3f, 0.0f), 10f, 0.3f, ShakeData.Target.Position, DG.Tweening.Ease.OutQuad);
         AudioManager.instance.PlaySound(_appleKnockedSound, Random.Range(0.9f, 1.0f), 1.0f);
 
         if (shakeRoutine != null)

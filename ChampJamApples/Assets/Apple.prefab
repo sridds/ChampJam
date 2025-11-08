@@ -10178,6 +10178,10 @@ MonoBehaviour:
   rotationAmount: 25
   shakeParticle: {fileID: 8384835290294637320}
   particlePlayChance: 100
+  _shakeZBaseAmount: -1
+  _shakeZIncreaseAmount: -0.3
+  _shakeVibrato: 10
+  _elasticity: 1
   _enterAppleSound: {fileID: 8300000, guid: d3f2dd0b204807147bf32be15faeccd1, type: 3}
   _exitAppleSound: {fileID: 8300000, guid: 8d7b612d9dc755f468e0cbd7ef05ce36, type: 3}
   _swingAppleSound:
