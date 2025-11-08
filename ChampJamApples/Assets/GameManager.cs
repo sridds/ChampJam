@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public PlayerMovement playerRef;
     public int playerHealth;
+    public int score;
+
     [SerializeField] public float groundheight;
 
     void Awake()
@@ -37,6 +39,11 @@ public class GameManager : MonoBehaviour
         {
             Death();
         }
+    }
+
+    public void GetPoints(int amount)
+    {
+        score += amount;
     }
 
     void Death()
