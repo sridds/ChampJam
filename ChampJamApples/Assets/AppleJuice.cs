@@ -26,14 +26,20 @@ public class AppleJuice : MonoBehaviour
     [SerializeField] Sprite[] _fallSprites;
     [SerializeField] float _frameInterval;
 
-    float timer = 0.0f;
+    [Header("Worm Inside")]
+    [SerializeField] SpriteRenderer _wormInside;
+    [SerializeField] Sprite[] _wormPokeAnimation;
+    [SerializeField] float _wormPokeInterval;
 
+    float timer = 0.0f;
+    float wormAnimTimer;
 
     void Awake()
     {
         appleRef.Shake += ShakeVisual;
         appleRef.Deattach += BreakOff;
         appleRef.Attach += AppleEnterEffects;
+        appleRef.WormLaunched += HideWorm;
     }
 
     // Update is called once per frame
@@ -69,7 +75,6 @@ public class AppleJuice : MonoBehaviour
             StopCoroutine(shakeRoutine);
         }
 
-        //timer -= 0.05f;
         _renderer.sprite = _spriteFlicker;
 
         ResetAppleVisual();
@@ -95,6 +100,8 @@ public class AppleJuice : MonoBehaviour
 
     IEnumerator RotateAround(int direction)
     {
+        HideWorm();
+
         float elapsed = 0;
         float angle = 0;
         
@@ -119,9 +126,10 @@ public class AppleJuice : MonoBehaviour
         }
     }
 
-    void AppleEnterEffects(Vector2 enterPosition)
+    void AppleEnterEffects(Vector2 enterPosition, Vector2 enterVelocity)
     {
-        Vector2 enterDirection = ((Vector2)transform.position - enterPosition).normalized;
+        Vector2 enterDirection = enterVelocity.normalized;
+        //Vector2 enterDirection = ((Vector2)transform.position - enterPosition).normalized;
 
         if (shakeRoutine != null)
         {
@@ -138,7 +146,27 @@ public class AppleJuice : MonoBehaviour
         }
 
         enterParticle.Play();
+        StartCoroutine(IWormAnimation(enterDirection));
     }
+
+    private IEnumerator IWormAnimation(Vector2 direction)
+    {
+        _wormInside.enabled = true;
+        _wormInside.transform.localPosition = Vector2.zero + (Mathf.Sign(direction.x) * new Vector2(0.3f, 0.0f));
+        _wormInside.flipX = Mathf.Sign(direction.x) == -1;
+
+        for (int i = 0; i < _wormPokeAnimation.Length; i++)
+        {
+            _wormInside.sprite = _wormPokeAnimation[i];
+            yield return new WaitForSeconds(_wormPokeInterval);
+        }
+    }
+
+    void HideWorm()
+    {
+        _wormInside.enabled = false;
+    }
+
     void ResetAppleVisual()
     {
         shakeTransform.eulerAngles = Vector3.zero;

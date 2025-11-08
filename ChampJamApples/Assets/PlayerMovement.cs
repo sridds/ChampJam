@@ -70,6 +70,8 @@ public class PlayerMovement : MonoBehaviour
         gameObject.transform.position = startPos;
         myMarkerManager.ClearMarkerList();
         rb.AddForce(launch, ForceMode2D.Impulse);
+
+        OnLaunch?.Invoke();
     }
 
     public void ManualMovement()
@@ -130,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
                     return;
                 }
 
-                appleScript.Enter(transform.position);
+                appleScript.Enter(transform.position, rb.linearVelocity);
 
                 transform.position = appleScript.transform.position;
                 myMarkerManager.ClearMarkerList();

@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using static AppleManager;
 
@@ -27,7 +26,8 @@ public class Apple : MonoBehaviour
 
     public Action<ShakeDirections> Shake;
     public Action Deattach;
-    public Action<Vector2> Attach;
+    public Action<Vector2, Vector2> Attach;
+    public Action WormLaunched;
     AppleSpawn spawnPoint;
     public enum ShakeDirections
     {
@@ -120,6 +120,7 @@ public class Apple : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             WormLaunch();
+            WormLaunched?.Invoke();
         }
     }
 
@@ -151,9 +152,9 @@ public class Apple : MonoBehaviour
         wormRef.Launch(dragDistance * launchMultiplier, transform.position);
     }
 
-    public void Enter(Vector3 enterPos)
+    public void Enter(Vector3 enterPos, Vector3 enterVelocity)
     {
-        Attach?.Invoke(enterPos);
+        Attach?.Invoke(enterPos, enterVelocity);
         doesHaveWorm = true;
     }
 }

@@ -16,6 +16,14 @@ public class WormVisuals : MonoBehaviour
     private SpriteRenderer _wormHeadRenderer;
     [SerializeField]
     private WormSegments _segments;
+    [SerializeField]
+    private PlayerMovement _movement;
+
+    [Header("Audio")]
+    [SerializeField]
+    private AudioSource _source;
+    [SerializeField]
+    private AudioClip _munchClip;
 
     [Header("Sprite Animations")]
     [SerializeField]
@@ -34,6 +42,12 @@ public class WormVisuals : MonoBehaviour
     private float _swallowFrameDuration = 0.2f;
 
     private EWormVisualState state;
+    private Coroutine eatCoroutine;
+
+    private void Start()
+    {
+        _movement.OnLaunch += PlayEatAnimation;
+    }
 
     private void Update()
     {
@@ -45,26 +59,21 @@ public class WormVisuals : MonoBehaviour
         {
             _wormHeadRenderer.flipX = true;
         }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            PlayEatAnimation();
-        }
     }
 
     public void PlayEatAnimation()
     {
-        if (state == EWormVisualState.Chewing) return;
-
         state = EWormVisualState.Chewing;
 
-        StartCoroutine(IEatAnimation());
+        if (eatCoroutine != null) StopCoroutine(eatCoroutine);
+        eatCoroutine = StartCoroutine(IEatAnimation());
     }
 
     private IEnumerator IEatAnimation()
     {
         for (int i = 0; i < _chewCycles; i++)
         {
+            _source.PlayOneShot(_munchClip);
             for(int j = 0; j < _chewSprites.Length; j++)
             {
                 _wormHeadRenderer.sprite = _chewSprites[j];
@@ -80,5 +89,6 @@ public class WormVisuals : MonoBehaviour
         _wormHeadRenderer.sprite = _defaultSprite;
 
         state = EWormVisualState.Default;
+        eatCoroutine = null;
     }
 }
