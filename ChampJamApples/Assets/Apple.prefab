@@ -10179,6 +10179,7 @@ MonoBehaviour:
   particlePlayChance: 40
   enterParticle: {fileID: 5593203258995642389}
   _renderer: {fileID: 6650414545276564829}
+  _spriteFlicker: {fileID: 3070462583137694784, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   _fallSprites:
   - {fileID: 4940116343858292626, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
   - {fileID: 631655654, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}

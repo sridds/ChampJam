@@ -22,6 +22,7 @@ public class AppleJuice : MonoBehaviour
 
     [Header("Falling Animation")]
     [SerializeField] SpriteRenderer _renderer;
+    [SerializeField] Sprite _spriteFlicker;
     [SerializeField] Sprite[] _fallSprites;
     [SerializeField] float _frameInterval;
 
@@ -67,6 +68,10 @@ public class AppleJuice : MonoBehaviour
         {
             StopCoroutine(shakeRoutine);
         }
+
+        //timer -= 0.05f;
+        _renderer.sprite = _spriteFlicker;
+
         ResetAppleVisual();
         breakoffFlag = true;
     }

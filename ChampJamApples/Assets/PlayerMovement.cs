@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -17,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float maxFallSpeed;
 
     Apple previousApple;
+    public Action OnLaunch;
+
     void Start()
     {
         
@@ -65,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     {
         gameObject.SetActive(true);
         gameObject.transform.position = startPos;
+        myMarkerManager.ClearMarkerList();
         rb.AddForce(launch, ForceMode2D.Impulse);
     }
 

@@ -119,7 +119,7 @@ public class WormSegments : MonoBehaviour
 
         if(distanceTimer >= _distanceBetween)
         {
-            WormSegment temp = Instantiate(bodyParts[0], marker.markers[0].position, marker.markers[0].rotation, transform);
+            WormSegment temp = Instantiate(bodyParts[0], marker.markers[0].position, marker.markers[0].rotation);
 
             float scale = Mathf.Lerp(1.0f, _minScaleFalloff, (float)currentIndex / (float)initialLength);
             currentIndex++;
