@@ -77,6 +77,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Launch(Vector2 launch, Vector2 startPos)
     {
+        transform.parent = null;
+
         gameObject.SetActive(true);
         gameObject.transform.position = startPos;
         myMarkerManager.ClearMarkerList();
@@ -170,6 +172,7 @@ public class PlayerMovement : MonoBehaviour
                 appleScript.Enter(transform.position, rb.linearVelocity);
 
                 transform.position = appleScript.transform.position;
+                transform.parent = appleScript.transform;
                 myMarkerManager.ClearMarkerList();
                 wormSegments.Clear();
 

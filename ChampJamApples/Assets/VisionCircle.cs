@@ -75,10 +75,13 @@ public class VisionCircle : MonoBehaviour
 
         //Damage Player
         cooldownTimer += Time.deltaTime;
+    }
 
+    private void LateUpdate()
+    {
         if (cooldownTimer > damageCooldown)
         {
-            Debug.DrawLine(transform.position, new Vector3(0, transform.localScale.x / 2, 0) + transform.position); 
+            Debug.DrawLine(transform.position, new Vector3(0, transform.localScale.x / 2, 0) + transform.position);
             if (Physics2D.OverlapCircle(transform.position, transform.localScale.x / 2, playerLayer))
             {
                 _metalGearAlert.ShowAlert();
@@ -87,8 +90,6 @@ public class VisionCircle : MonoBehaviour
                 cooldownTimer = 0;
             }
         }
-
-
     }
 
     private bool isFlickering;
