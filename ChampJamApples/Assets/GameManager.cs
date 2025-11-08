@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        Time.timeScale = 1;
+
         if (instance == null)
         {
             instance = this;
@@ -36,12 +38,20 @@ public class GameManager : MonoBehaviour
     {
         playerHealth--;
         UIManager.instance.SetHealth(playerHealth);
+        CameraJuice.instance.AddShakeEvent(new Vector3(0, 8, 0), 11, 0.5f);
+        StartCoroutine(FreezeFrame(0.2f));
         if (playerHealth <= 0)
         {
             Death();
         }
     }
 
+    public IEnumerator FreezeFrame(float duration)
+    {
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(duration);
+        Time.timeScale = 1;
+    }
 
     public void GetPoints(int amount)
     {

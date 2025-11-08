@@ -485,6 +485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
+  metalGearSolidController: {fileID: 1829145562}
 --- !u!1001 &1085525166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1004,6 +1005,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1829145562 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8314878816190933683, guid: e70798c74342b88428e331e4f197bff9, type: 3}
+  m_PrefabInstance: {fileID: 5014465748123775684}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a584ce25e2dfec340aa545db9d7d6a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1910356180
 PrefabInstance:
   m_ObjectHideFlags: 0

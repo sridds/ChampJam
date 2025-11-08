@@ -4,6 +4,7 @@ public class ApplePicker : MonoBehaviour
 {
     AppleManager appleManager;
     [SerializeField] float movementSpeed;
+    [SerializeField] MetalGearSolidController metalGearSolidController;
     void Start()
     {
         appleManager = AppleManager.instance;
@@ -44,6 +45,7 @@ public class ApplePicker : MonoBehaviour
     {
         if (apple.currentAge == Apple.Age.ROTTEN)
         {
+            metalGearSolidController.ShowAlert();
             GameManager.instance.TakeDamage();
         }
         else

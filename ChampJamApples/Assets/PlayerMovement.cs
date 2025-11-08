@@ -1,4 +1,6 @@
+using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -93,6 +95,11 @@ public class PlayerMovement : MonoBehaviour
         if (bounceCooldownTimer > 0.1f)
         {
             bounceCooldownTimer = 0;
+            MetalGearSolidController[] metalGearSolidControllers = FindObjectsByType<MetalGearSolidController>(FindObjectsSortMode.None);
+            foreach(MetalGearSolidController controller in metalGearSolidControllers)
+            {
+                controller.ShowAlert();
+            }
             GameManager.instance.TakeDamage();
         }
 
