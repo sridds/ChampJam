@@ -10180,7 +10180,13 @@ MonoBehaviour:
   particlePlayChance: 40
   _enterAppleSound: {fileID: 8300000, guid: d3f2dd0b204807147bf32be15faeccd1, type: 3}
   _exitAppleSound: {fileID: 8300000, guid: 8d7b612d9dc755f468e0cbd7ef05ce36, type: 3}
-  _swingAppleSound: {fileID: 0}
+  _swingAppleSound:
+  - {fileID: 8300000, guid: 813ddb105c214484f84cc89f3251ca84, type: 3}
+  - {fileID: 8300000, guid: ba79355ff712f1643ae6b429b8c0b1a8, type: 3}
+  - {fileID: 8300000, guid: ba79355ff712f1643ae6b429b8c0b1a8, type: 3}
+  - {fileID: 8300000, guid: a09a5af1da33fb447834f682af2fba41, type: 3}
+  - {fileID: 8300000, guid: a3d14520ee86088488a06ba14c780f97, type: 3}
+  - {fileID: 8300000, guid: 55f3e8d3da2384a47996aa8f42e878e1, type: 3}
   _appleKnockedSound: {fileID: 8300000, guid: 1ed356f2659e7e643954dff2abba7869, type: 3}
   enterParticle: {fileID: 5593203258995642389}
   _renderer: {fileID: 6650414545276564829}

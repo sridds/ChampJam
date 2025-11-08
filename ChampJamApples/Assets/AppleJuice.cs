@@ -20,8 +20,9 @@ public class AppleJuice : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioClip _enterAppleSound;
     [SerializeField] AudioClip _exitAppleSound;
-    [SerializeField] AudioClip _swingAppleSound;
+    [SerializeField] AudioClip[] _swingAppleSound;
     [SerializeField] AudioClip _appleKnockedSound;
+    [SerializeField] float _pitchUpwardModification = 0.05f;
 
     [Header("Enter")]
     [SerializeField] ParticleSystem enterParticle;
@@ -37,6 +38,7 @@ public class AppleJuice : MonoBehaviour
     [SerializeField] Sprite[] _wormPokeAnimation;
     [SerializeField] float _wormPokeInterval;
 
+    int shakeIndex;
     float timer = 0.0f;
     float wormAnimTimer;
 
@@ -57,6 +59,9 @@ public class AppleJuice : MonoBehaviour
     // Update is called once per frame
     void ShakeVisual(Apple.ShakeDirections shakeDir)
     {
+        AudioManager.instance.PlaySound(_swingAppleSound[shakeIndex], 1.0f + (_pitchUpwardModification * shakeIndex), 1.0f);
+        shakeIndex++;
+
         if (shakeRoutine != null)
         {
             StopCoroutine(shakeRoutine);
