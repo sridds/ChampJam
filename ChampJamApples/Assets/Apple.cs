@@ -75,11 +75,6 @@ public class Apple : MonoBehaviour
 
         DropApple();
 
-        if (doesHaveWorm && transform.position.y <= GameManager.instance.groundheight)
-        {
-            doesHaveWorm = false;
-            wormRef.Bounce(transform.position, true);
-        }
 
         if (transform.position.y <= GameManager.instance.groundheight)
         {
@@ -220,5 +215,16 @@ public class Apple : MonoBehaviour
     {
         Attach?.Invoke(enterPos, enterVelocity);
         doesHaveWorm = true;
+    }
+
+    public void GetEaten()
+    {
+        if (doesHaveWorm)
+        {
+            doesHaveWorm = false;
+            wormRef.Bounce(transform.position, true);
+        }
+        Destroy(gameObject);
+        
     }
 }

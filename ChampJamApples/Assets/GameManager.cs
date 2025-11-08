@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
             Death();
         }
     }
+
 
     public void GetPoints(int amount)
     {
