@@ -257,6 +257,8 @@ MonoBehaviour:
   isAttached: 0
   maxDragDistance: 3.5
   launchMultiplier: 5
+  health: 5
+  fallSpeed: 2
   arrow: {fileID: 6937700465092194827}
   maxArrowLength: 2
   minArrowLength: 0.2
