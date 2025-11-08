@@ -471,6 +471,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2220365588624077864, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
+      propertyPath: wormSegments
+      value: 
+      objectReference: {fileID: 2036428231}
+    - target: {fileID: 2220365588624077864, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
+      propertyPath: myMarkerManager
+      value: 
+      objectReference: {fileID: 2036428229}
     - target: {fileID: 3490574432494885991, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.09
@@ -821,6 +829,9 @@ MonoBehaviour:
   startSpawnDelay: 5
   endSpawnDelay: 3
   timeUntilEnd: 20
+  appleLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &1916573763
 Transform:
   m_ObjectHideFlags: 0
@@ -877,6 +888,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1916573763}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2036428229 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9208407288121156079, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
+  m_PrefabInstance: {fileID: 1085525166}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3398c7ff901a3e49ba69edad8b070df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2036428231 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4622385031443136852, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
+  m_PrefabInstance: {fileID: 1085525166}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2190e9ba84358bd42aafb0a7bee98f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2076145233
 GameObject:
   m_ObjectHideFlags: 0

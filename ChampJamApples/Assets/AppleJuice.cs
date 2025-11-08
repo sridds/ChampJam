@@ -20,6 +20,13 @@ public class AppleJuice : MonoBehaviour
     [Header("Enter")]
     [SerializeField] ParticleSystem enterParticle;
 
+    [Header("Falling Animation")]
+    [SerializeField] SpriteRenderer _renderer;
+    [SerializeField] Sprite[] _fallSprites;
+    [SerializeField] float _frameInterval;
+
+    float timer = 0.0f;
+
 
     void Awake()
     {
@@ -61,6 +68,24 @@ public class AppleJuice : MonoBehaviour
             StopCoroutine(shakeRoutine);
         }
         ResetAppleVisual();
+        breakoffFlag = true;
+    }
+
+    bool breakoffFlag = false;
+    int index;
+    private void Update()
+    {
+        if (breakoffFlag)
+        {
+            timer += Time.deltaTime;
+
+            if(timer > _frameInterval)
+            {
+                index++;
+                _renderer.sprite = _fallSprites[index % _fallSprites.Length];
+                timer = 0.0f;
+            }
+        }
     }
 
     IEnumerator RotateAround(int direction)

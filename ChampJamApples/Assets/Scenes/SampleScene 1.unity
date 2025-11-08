@@ -567,77 +567,9 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4622385031443136852, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: _distanceBetween
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622385031443136852, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: _minScaleFalloff
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622385031443136852, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: _bodyParts.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622385031443136852, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: '_bodyParts.Array.data[0]'
-      value: 
-      objectReference: {fileID: -8182218335043264917, guid: 33350a0c7b87d2049a66804bfb82def1, type: 3}
-    - target: {fileID: 4622385031443136852, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: '_bodyParts.Array.data[1]'
-      value: 
-      objectReference: {fileID: -8182218335043264917, guid: 33350a0c7b87d2049a66804bfb82def1, type: 3}
-    - target: {fileID: 4622385031443136852, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: '_bodyParts.Array.data[2]'
-      value: 
-      objectReference: {fileID: -8182218335043264917, guid: 33350a0c7b87d2049a66804bfb82def1, type: 3}
-    - target: {fileID: 4622385031443136852, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: '_bodyParts.Array.data[3]'
-      value: 
-      objectReference: {fileID: -8182218335043264917, guid: 33350a0c7b87d2049a66804bfb82def1, type: 3}
-    - target: {fileID: 4622385031443136852, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: '_bodyParts.Array.data[4]'
-      value: 
-      objectReference: {fileID: -8182218335043264917, guid: 33350a0c7b87d2049a66804bfb82def1, type: 3}
-    - target: {fileID: 4622385031443136852, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
       propertyPath: '_bodyParts.Array.data[5]'
       value: 
       objectReference: {fileID: -8182218335043264917, guid: 33350a0c7b87d2049a66804bfb82def1, type: 3}
-    - target: {fileID: 5063558578496049276, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: _segments
-      value: 
-      objectReference: {fileID: 1556839053}
-    - target: {fileID: 5063558578496049276, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: _defaultSprite
-      value: 
-      objectReference: {fileID: -897107974938402584, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
-    - target: {fileID: 5063558578496049276, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: _swallowSpriteA
-      value: 
-      objectReference: {fileID: -7591865148917879237, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
-    - target: {fileID: 5063558578496049276, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: _swallowSpriteB
-      value: 
-      objectReference: {fileID: -1293923926150288066, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
-    - target: {fileID: 5063558578496049276, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: _chewFrameDuration
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 5063558578496049276, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: _swallowFrameDuration
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5063558578496049276, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: _chewSprites.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5063558578496049276, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: '_chewSprites.Array.data[0]'
-      value: 
-      objectReference: {fileID: 3333537666500559670, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
-    - target: {fileID: 5063558578496049276, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
-      propertyPath: '_chewSprites.Array.data[1]'
-      value: 
-      objectReference: {fileID: -1379284931105554088, guid: 86ca0dee99893e540adfe0e947d02ae2, type: 3}
     - target: {fileID: 5063558578496049276, guid: ae123ea06ef08a748a8e5091a5ed6b00, type: 3}
       propertyPath: _swallowSprites.Array.size
       value: 2
