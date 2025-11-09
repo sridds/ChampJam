@@ -80,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Launch(Vector2 launch, Vector2 startPos)
     {
+        Tutorial.instance.EndMouseTutorial();
         float launchMagnitude = launch.magnitude;
         Debug.Log("mag " + launchMagnitude);
 
@@ -181,6 +182,7 @@ public class PlayerMovement : MonoBehaviour
                 }
 
                 appleScript.Enter(transform.position, rb.linearVelocity);
+
 
                 transform.position = appleScript.transform.position;
                 transform.parent = appleScript.transform;

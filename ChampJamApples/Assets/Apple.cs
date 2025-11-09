@@ -134,6 +134,9 @@ public class Apple : MonoBehaviour
         if (health <= 0 && isAttached)
         {
             Debug.Log("Drop");
+
+            Tutorial.instance.EndKeyTutorial();
+            Tutorial.instance.MouseTutorial();
             //Drop Apple Effects
             isAttached = false;
             if (spawnPoint != null)
@@ -209,12 +212,14 @@ public class Apple : MonoBehaviour
     {
         doesHaveWorm = false;
         wormRef.Launch(dragDistance * launchMultiplier, transform.position);
+
     }
 
     public void Enter(Vector3 enterPos, Vector3 enterVelocity)
     {
         Attach?.Invoke(enterPos, enterVelocity);
         doesHaveWorm = true;
+        Tutorial.instance.KeyTutorial();
     }
 
     public void GetEaten()

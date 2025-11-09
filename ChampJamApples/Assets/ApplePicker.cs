@@ -7,6 +7,7 @@ public class ApplePicker : MonoBehaviour
     [SerializeField] MetalGearSolidController metalGearSolidController;
     [SerializeField] GameObject pointsPopup;
     bool hasStarted = false;
+
     void Start()
     {
         appleManager = AppleManager.instance;

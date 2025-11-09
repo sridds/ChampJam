@@ -1132,7 +1132,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 3, y: 3, z: 3, w: 3}
       customData: 
       outline: []
@@ -1141,6 +1141,94 @@ TextureImporter:
       bones: []
       spriteID: 72567718f2580f24aab2c30df28c4cb3
       internalID: 1686914617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worm 1_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 128
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f471ab1f7b2eb41a3f1f2e75b5eaa4
+      internalID: 1629329669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worm 1_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 112
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c10389e22bfb64bbd2bb5b2ca85e54
+      internalID: 289996313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worm 1_5
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 81
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227537f90c94f314fa3323213cc9d7e1
+      internalID: -1837733958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worm 1_6
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 81
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927426db17bebaa4daefa08dc0d71745
+      internalID: -1081047703
       vertices: []
       indices: 
       edges: []
@@ -1180,6 +1268,12 @@ TextureImporter:
       oldApple7: -1924225492
       oldApple8: -1263375005
       worm 1_0: 1686914617
+      worm 1_1: 1629329669
+      worm 1_2: -2051810448
+      worm 1_3: 289996313
+      worm 1_4: 579537472
+      worm 1_5: -1837733958
+      worm 1_6: -1081047703
       worm_0: -1379284931105554088
       worm_1: -897107974938402584
       worm_10: -146528815
