@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int score;
 
     [SerializeField] public float groundheight;
+    public bool isGameOver;
 
     void Awake()
     {
@@ -29,6 +30,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (Input.GetMouseButtonDown(0) && isGameOver)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -61,6 +67,7 @@ public class GameManager : MonoBehaviour
 
     void Death()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        UIManager.instance.ShowEndScreen(score);
+        isGameOver = true;
     }
 }
