@@ -221,6 +221,7 @@ public class Apple : MonoBehaviour
     {
         if (doesHaveWorm)
         {
+            
             doesHaveWorm = false;
             wormRef.Bounce(transform.position, true);
         }

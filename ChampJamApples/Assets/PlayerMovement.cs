@@ -93,6 +93,12 @@ public class PlayerMovement : MonoBehaviour
         gameObject.transform.position = startPos;
         myMarkerManager.ClearMarkerList();
         rb.linearVelocityY = bottomBounceForce;
+        transform.parent = null;
+
+        if (fromApple)
+        {
+            OnLaunch?.Invoke();
+        }
 
         if (bounceCooldownTimer > 0.1f)
         {
@@ -105,10 +111,6 @@ public class PlayerMovement : MonoBehaviour
             GameManager.instance.TakeDamage();
         }
 
-        if (fromApple)
-        {
-            OnLaunch?.Invoke();
-        }
     }
 
     public void ManualMovement()
