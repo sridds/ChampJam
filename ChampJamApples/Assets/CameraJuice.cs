@@ -123,7 +123,7 @@ public class CameraJuice : MonoBehaviour
     public void AddCameraJerk(Vector2 jerkAmount, float duration, int vibrato, float elasticity)
     {
         _punchTarget2.DOKill(true);
-        _punchTarget2.DOPunchPosition(jerkAmount, duration, vibrato, elasticity);
+        _punchTarget2.DOPunchPosition(jerkAmount, duration, vibrato, elasticity).SetEase(Ease.OutQuint);
     }
 
     public void AddCameraPunch(float zPunchAmount, float duration, int vibrato, float elasticity)

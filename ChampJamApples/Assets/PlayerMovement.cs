@@ -75,8 +75,17 @@ public class PlayerMovement : MonoBehaviour
         ManualMovement();
     }
 
+    public int jerkVibrato = 15;
+    public float jerkElasticity = 1.5f;
+
     public void Launch(Vector2 launch, Vector2 startPos)
     {
+        float launchMagnitude = launch.magnitude;
+        Debug.Log("mag " + launchMagnitude);
+
+        float normMag = Mathf.Lerp(0, 1, launchMagnitude / 21.0f);
+
+        CameraJuice.instance.AddCameraJerk(-launch.normalized * normMag * 0.9f, 0.2f, 1, 0.2f);
         transform.parent = null;
 
         gameObject.SetActive(true);
