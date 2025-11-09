@@ -1150,6 +1150,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5391117104124929576, guid: 9a8a0d6d2a04b87499f9218728222d74, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3885689228771973470, guid: 114ae08f070e5a34a905a7ae2c1705aa, type: 2}
+    - target: {fileID: 5391117104124929576, guid: 9a8a0d6d2a04b87499f9218728222d74, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6079529005853009685, guid: 9a8a0d6d2a04b87499f9218728222d74, type: 3}
       propertyPath: endScreen
       value: 
@@ -1236,6 +1244,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8236736654505159159, guid: 9a8a0d6d2a04b87499f9218728222d74, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8922465020545793044, guid: 9a8a0d6d2a04b87499f9218728222d74, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 114ae08f070e5a34a905a7ae2c1705aa, type: 2}
+    - target: {fileID: 8922465020545793044, guid: 9a8a0d6d2a04b87499f9218728222d74, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3885689228771973470, guid: 114ae08f070e5a34a905a7ae2c1705aa, type: 2}
+    - target: {fileID: 8922465020545793044, guid: 9a8a0d6d2a04b87499f9218728222d74, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8945600489019963499, guid: 9a8a0d6d2a04b87499f9218728222d74, type: 3}
@@ -1824,3 +1844,4 @@ SceneRoots:
   - {fileID: 8368348173500232008}
   - {fileID: 5660816239401989681}
   - {fileID: 589478836}
+  - {fileID: 2103798244}
