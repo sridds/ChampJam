@@ -86,6 +86,8 @@ public class CameraJuice : MonoBehaviour
     [SerializeField]
     private Transform _punchTarget;
     [SerializeField]
+    private Transform _punchTarget2;
+    [SerializeField]
     private int _pixelsPerUnit = 16;
 
     private void Awake()
@@ -116,6 +118,12 @@ public class CameraJuice : MonoBehaviour
         data.useUnscaledTime = useUnscaledTime;
 
         AddShakeEvent(data);
+    }
+
+    public void AddCameraJerk(Vector2 jerkAmount, float duration, int vibrato, float elasticity)
+    {
+        _punchTarget2.DOKill(true);
+        _punchTarget2.DOPunchPosition(jerkAmount, duration, vibrato, elasticity);
     }
 
     public void AddCameraPunch(float zPunchAmount, float duration, int vibrato, float elasticity)
