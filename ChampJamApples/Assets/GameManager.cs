@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int score;
 
     [SerializeField] public float groundheight;
+    public AudioClip damageClip;
     public bool isGameOver;
 
     void Awake()
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     public void TakeDamage()
     {
+        AudioManager.instance.PlaySound(damageClip, 1.0f, 1.0f);
         playerHealth--;
         UIManager.instance.SetHealth(playerHealth);
         CameraJuice.instance.AddShakeEvent(new Vector3(0, 8, 0), 11, 0.5f);
