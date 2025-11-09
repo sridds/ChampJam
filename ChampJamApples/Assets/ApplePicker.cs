@@ -5,6 +5,7 @@ public class ApplePicker : MonoBehaviour
     AppleManager appleManager;
     [SerializeField] float movementSpeed;
     [SerializeField] MetalGearSolidController metalGearSolidController;
+    [SerializeField] GameObject pointsPopup;
     void Start()
     {
         appleManager = AppleManager.instance;
@@ -32,8 +33,8 @@ public class ApplePicker : MonoBehaviour
 
         if (closestApple != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, closestApple.transform.position, movementSpeed * Time.deltaTime);
-            if (Vector2.Distance(transform.position, closestApple.transform.position) < 0.2f)
+            transform.position = Vector2.MoveTowards(transform.position, closestApple.transform.position + new Vector3(0, 0.3f,0), movementSpeed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, closestApple.transform.position) < 0.4f)
             {
                 PickUpApple(closestApple);
             }
@@ -53,6 +54,7 @@ public class ApplePicker : MonoBehaviour
             GameManager.instance.GetPoints(100);
         }
         AppleManager.instance.RemoveGroundApple(apple);
+        GameObject newPoints = Instantiate(pointsPopup, transform.position, Quaternion.identity);
         apple.GetEaten();
     }
 }

@@ -382,7 +382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 89483747669084649}
-  - component: {fileID: 6586971773810811886}
+  - component: {fileID: 4617569965953338147}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -406,7 +406,7 @@ Transform:
   - {fileID: 6199956524116071285}
   m_Father: {fileID: 6395429295503194369}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6586971773810811886
+--- !u!114 &4617569965953338147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -420,6 +420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 2
   metalGearSolidController: {fileID: 8314878816190933683}
+  pointsPopup: {fileID: 1260386843651073658, guid: 63324871409787b4a9440846bde9e358, type: 3}
 --- !u!1 &7520139291754661874
 GameObject:
   m_ObjectHideFlags: 0
